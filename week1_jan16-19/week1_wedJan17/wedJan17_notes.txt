@@ -1,7 +1,149 @@
-Syllabus
+CIS 400: Object-oriented design, implementation, and testing
 
-Class structure
+Julie Thornton
 
-Canvas setup
 
-Friday, January 19 - discuss git, do Milestone 0 together in class
+-----------------------------------------------------------
+What will we learn? 
+    Creating and maintaining a large software project
+
+1) Object-oriented development principles
+2) Desktop development using WPF, data binding, and custom events 
+3) Web development using ASP.NET, web forms, and LINQ
+
+Throughout course: writing unit tests, creating UML diagrams
+
+
+
+
+
+--> big project: developing menu, point of sale, website for "Build Your Bowl"
+    (customizable rice bowls and nachos - kinda sorta like Chipotle)
+
+    Part 1: develop menu using object-oriented design principles
+    Part 2: write point of sale WPF application for restaurant
+    Part 3: create website for restaurant using ASP.NET
+
+
+
+-----------------------------------------------------------
+
+Course structure - hybrid.
+
+- Module of work each week:
+    - reading (do first)
+    - maybe, a quiz or 2 (not graded, but recommended!)
+    - 1-2 video tutorials (will start next week - due Mon/Tues)
+    - new milestone for the semester-long project (due Fri)
+
+    - this week is a little different
+
+
+What will we do during class time?
+    Mondays:
+    Wednesdays:
+    Fridays:
+
+
+
+
+----------------------------------------------------------
+
+Software needed.
+
+- Visual Studio 2022 (disable IntelliCode) and Visio (can use another UML tool)
+
+
+- How to get free versions of both?
+
+
+- Mac users
+
+
+
+
+- Lab machines
+
+
+
+
+----------------------------------------------------------
+
+Graded work.
+
+Midterm exams (2):      20%
+Final exam:             15%
+Milestones (about 12):  50%
+Activities (tutorials): 15%
+
+
+Grading scale: 90/80/70/60
+
+
+Borderline grades.
+
+
+
+
+
+
+
+-----------------------------------------------------------
+
+Class policies.
+
+- Late work
+
+
+
+- Dropped exam
+
+
+
+- Incomplete
+
+
+
+- Collaboration
+
+
+
+- Getting help
+
+    --> Helping hand extra credit
+
+-----------------------------------------------------------
+
+Course materials.
+
+- Canvas (see syllabus and modules)
+
+
+- Online textbook
+
+
+
+
+--> See any typos? Bug bounty.
+
+
+
+
+
+
+------------------------------------------------------------
+
+THIS week:
+    - Milestone 0 due Fri (finish reading assignment / quiz beforehand!)
+        - practice milestone process (git, create release)
+        - we will work on milestone together during Friday's class
+        - PLUS, post on Discord (can do this now)
+
+
+
+Milestone 0.
+
+------------------------------------------------------------
+
+Experience with git? Branches? Merging? Multiple "local" repos?
+
