@@ -32,7 +32,7 @@ Course structure - hybrid.
 
 - Module of work each week:
     - reading (do first)
-    - maybe, a quiz or 2 (not graded, but recommended!)
+    - maybe, a quiz or 2 (not for points, but recommended!)
     - 1-2 video tutorials (will start next week - due Mon/Tues)
     - new milestone for the semester-long project (due Fri)
 
@@ -145,5 +145,87 @@ Milestone 0.
 
 ------------------------------------------------------------
 
-Experience with git? Branches? Merging? Multiple "local" repos?
+Experience with git? Command line? Branches? Merging? Multiple "local" repos?
 
+
+-------------------------------------------------------------
+
+C# review.
+
+
+
+Write the class Point that represents an (x, y) coordinate. It should include:
+
+- Fields for the x and y coordinates that are only visible inside the class itself
+- A constructor that takes values for both fields and initializes them
+- The method Midpoint, which takes a second Point as a parameter 
+and returns a new Point that is the midpoint between this point and the parameter
+
+
+
+////////////
+
+Create Point (2, 4) called p1
+
+
+Create Point (3, 6) called p2
+
+
+
+--> where are these points in memory?
+
+--> can we create a "default" point?
+
+--> difference between field default value and local variable default value
+
+
+//////////
+
+If we do:
+
+Console.WriteLine(p1);
+ 
+
+What prints?
+
+//////////
+
+Get the midpoint between p1 and p2 by calling your Midpoint method. 
+Store the result in a Point called p3.
+
+
+//////////
+
+Consider the following Person class:
+
+public class Person {
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+ 
+
+Create two Person objects – pers1 and pers2. 
+    pers1 should represent the person named John Doe who is age 40
+    pers2 should represent the person Maria Smith who is age 20.
+
+///////
+
+If we do:
+
+pers1 = pers2;
+pers1.Age++;
+Console.WriteLine(pers1.Age);
+Console.WriteLine(pers2.Age);
+
+What prints?
+
+////////
+
+Create a List called people that can hold Person objects. 
+Add pers1 and pers2 to the list
+
+
+///////
+
+Assume your list has been filled with additional values. 
+Print the name of each person in the list whose age is at least 18.
