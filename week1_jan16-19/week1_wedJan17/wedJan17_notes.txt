@@ -4,6 +4,7 @@ Julie Thornton
 
 
 -----------------------------------------------------------
+
 What will we learn? 
     Creating and maintaining a large software project
 
@@ -17,8 +18,9 @@ Throughout course: writing unit tests, creating UML diagrams
 
 
 
---> big project: developing menu, point of sale, website for "Build Your Bowl"
-    (customizable rice bowls and nachos - kinda sorta like Chipotle)
+--> big project: developing menu, point of sale, website for 
+    "Build Your Bowl" (customizable rice bowls and nachos - 
+        kinda sorta like Chipotle)
 
     Part 1: develop menu using object-oriented design principles
     Part 2: write point of sale WPF application for restaurant
@@ -30,19 +32,24 @@ Throughout course: writing unit tests, creating UML diagrams
 
 Course structure - hybrid.
 
-- Module of work each week:
-    - reading (do first)
+- Module of work each week (posted each Friday):
+    - reading
     - maybe, a quiz or 2 (not for points, but recommended!)
-    - 1-2 video tutorials (will start next week - due Mon/Tues)
+    - 2 video tutorials (will start next week - due Mon/Tues)
     - new milestone for the semester-long project (due Fri)
 
     - this week is a little different
 
 
+
+
 What will we do during class time?
-    Mondays:
-    Wednesdays:
-    Fridays:
+    Mondays: lecture/recitation over current material
+
+    Wednesdays: (whatever is left), talk about current milestone,
+        get help if needed
+
+    Fridays: help time
 
 
 
@@ -51,7 +58,8 @@ What will we do during class time?
 
 Software needed.
 
-- Visual Studio 2022 (disable IntelliCode) and Visio (can use another UML tool)
+- Visual Studio 2022 (disable IntelliCode) and Visio 
+    (can use another UML tool)
 
 
 - How to get free versions of both?
@@ -74,7 +82,7 @@ Graded work.
 Midterm exams (2):      20%
 Final exam:             15%
 Milestones (about 12):  50%
-Activities (tutorials): 15%
+Tutorials:              15%
 
 
 Grading scale: 90/80/70/60
@@ -93,10 +101,16 @@ Borderline grades.
 Class policies.
 
 - Late work
+    milestones are due each Friday
+    late milestone lose 10% each day they are late 
+        bottom threshold of 40% 
+    all previous work turned in by the Friday after an exam
 
-
+    same for tutorials (Mon/Tues)
 
 - Dropped exam
+    2 midterms 
+    1 final
 
 
 
@@ -105,7 +119,8 @@ Class policies.
 
 
 - Collaboration
-
+    tutorials: if you want?
+    milestones: should be your own work
 
 
 - Getting help
@@ -134,7 +149,7 @@ Course materials.
 ------------------------------------------------------------
 
 THIS week:
-    - Milestone 0 due Fri (finish reading assignment / quiz beforehand!)
+    - Milestone 0 due Fri (finish reading / quiz beforehand!)
         - practice milestone process (git, create release)
         - we will work on milestone together during Friday's class
         - PLUS, post on Discord (can do this now)
@@ -145,7 +160,8 @@ Milestone 0.
 
 ------------------------------------------------------------
 
-Experience with git? Command line? Branches? Merging? Multiple "local" repos?
+Experience with git? Command line? Branches? Merging? 
+Multiple "local" repos?
 
 
 -------------------------------------------------------------
@@ -154,29 +170,61 @@ C# review.
 
 
 
-Write the class Point that represents an (x, y) coordinate. It should include:
+Write the class Point that represents (x, y) coordinates
 
-- Fields for the x and y coordinates that are only visible inside the class itself
-- A constructor that takes values for both fields and initializes them
-- The method Midpoint, which takes a second Point as a parameter 
-and returns a new Point that is the midpoint between this point and the parameter
+- Fields for the x and y coordinates that are only visible 
+    inside the class itself
 
+- A constructor that takes values for both fields and 
+    initializes them
+
+- The method Midpoint, which takes a second Point and 
+    returns the midpoint between this point and the parameter
+    (2,4) (4,6)
+
+public class Point {
+    private int _x;
+    private int _y;
+
+    public Point(int _x, int _y) {
+        this._x = _x;
+        this._y = _y;
+    }
+
+    public Point Midpoint(Point p) {
+        int x = (_x+p._x)/2;
+        int y = (_y+p._y)/2;
+
+        return new Point(x, y);
+    }
+}
 
 
 ////////////
 
 Create Point (2, 4) called p1
-
+    Point p1 = new Point(2,4);
 
 Create Point (3, 6) called p2
+    Point p2 = new Point(3,6);
 
 
 
---> where are these points in memory?
+--> where are these points in memory? heap
+stack: function calls, local variables
+heap: dynamically allocated memory (reference types, objects)
+
+
+
+
 
 --> can we create a "default" point?
 
---> difference between field default value and local variable default value
+--> difference between field default value and 
+    local variable default value
+
+    int x;
+    Console.WriteLine(x); //compiler error
 
 
 //////////
@@ -186,13 +234,20 @@ If we do:
 Console.WriteLine(p1);
  
 
-What prints?
+What prints? Point (would need to override for other behavior)
+
 
 //////////
 
 Get the midpoint between p1 and p2 by calling your Midpoint method. 
 Store the result in a Point called p3.
 
+Point p3 = p1.Midpoint(p2);
+
+
+//////////
+
+(didn't do rest of page during class)
 
 //////////
 
@@ -205,8 +260,10 @@ public class Person {
  
 
 Create two Person objects – pers1 and pers2. 
-    pers1 should represent the person named John Doe who is age 40
-    pers2 should represent the person Maria Smith who is age 20.
+    pers1: John Doe, age 40
+    pers2: Maria Smith, age 20.
+
+
 
 ///////
 
@@ -228,4 +285,4 @@ Add pers1 and pers2 to the list
 ///////
 
 Assume your list has been filled with additional values. 
-Print the name of each person in the list whose age is at least 18.
+Print name of each person whose age is at least 18.
