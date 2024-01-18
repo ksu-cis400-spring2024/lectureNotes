@@ -108,7 +108,9 @@ Class policies.
 
     same for tutorials (Mon/Tues)
 
-- Dropped exam
+- Dropped exam (will replace lowest midterm with grade on final,
+    if it helps your grade)
+    
     2 midterms 
     1 final
 

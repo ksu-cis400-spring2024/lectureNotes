@@ -1,0 +1,110 @@
+Milestone 0 due today (Friday, January 19)
+    --> also need to post in Discord class channel
+
+////////////////////////
+
+Overall idea of git.
+
+- have a remote repository (this is the URL you copy before you clone)
+- can have one or many local repositories on different computers
+    - each local repository is connected to the remote repository
+    - the remote repository is the "origin"
+    - each local repository will have a pointer to an active branch ("HEAD")
+    
+--> different local repositories might have different "HEAD" values
+
+--> as you checkout different branches in your local repo, the code on the computer
+    will change. This does NOT mean you've lost your other code.
+
+--> if you made changes to a local branch, you must make a commit and PUSH it
+    to the corresponding remote branch
+
+--> if there are changes in a remote branch, you must PULL them into 
+    the corresponding local branch
+
+
+////////////////
+
+When you sit down to work:
+
+    git status
+
+--> see what branch you are on
+--> see if you have any local changes (commit them if you do and want to keep them)
+
+
+Pull changes from the corresponding remote branch:
+
+    git pull
+
+(will need to set upstream in configurations initially. Can also do:
+git pull origin <branchName>)
+
+
+(git pull only pulls from the current branch. Will need to separately pull
+or checkout other branches, if needed.)
+
+
+///////////////
+
+When you take a break, commit and push changes to current branch:
+
+    git add .
+    git commit -m "describe your changes"
+    git push
+
+(will need to set upstream in configurations initially. Can also do:
+
+    git push -u origin <branchName>
+
+the -u creates a new remote branch with the same if that branch is new. Isn't
+needed if the branch already exists, but doesn't hurt.)
+
+
+/////////////
+
+Other tips:
+
+- commit and push a LOT!
+- stay on a milestone branch until you are completely done. Only then do
+    you want to merge it into main
+
+////////////
+
+Work through Milestone 0.
+
+- clone the repo to Visual Studio
+- use terminal:
+    git status
+    git branch ms0
+    git checkout ms0
+    git status
+
+- add comment line to top
+
+--> fix Calories
+    (subtract off ingredient amounts)
+    e.g., Chicken is 150 calories
+
+--> fix PreparationInformation
+    (add "Hold <ToppingName>" for excluded toppings)
+
+
+In terminal:
+    git status
+    git add .
+    git commit -m "finished milestone 0"
+    git push
+
+        (may have upstream issues)
+
+    git status
+
+
+Now merge into main:
+    git checkout main
+    git status
+    git merge ms0
+    git push
+
+--> check remote repo for ms0, main changes
