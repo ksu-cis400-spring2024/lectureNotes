@@ -1,0 +1,53 @@
+Encapsulation tutorial: due tonight
+Properties tutorial: due Tuesday
+Milestone 1: due Friday
+
+----------------------------
+
+Encapsulation - what is this?
+
+
+Want to keep track of scores and majors for students.
+    --> see current organization
+    --> why not great?
+    --> how to improve?
+
+
+----------------------------
+
+struct vs class
+
+differences in memory
+
+
+----------------------------
+
+static vs non-static
+
+when to use each?
+
+-----------------------------
+
+Properties
+
+--> autoproperty
+
+--> visibility
+
+--> init 
+
+--> default values
+
+--> enforcing bounds
+
+--> lambda notation
+
+--> properties vs fields
+
+
+See LabRoom class. Turn fields into properties.
+--> enforce room size 10-30
+--> make Windows value get-only (except on creation)
+    1) using a constructor
+    2) using init
+
