@@ -1,6 +1,8 @@
 Milestone 0 due today (Friday, January 19)
     --> also need to post in Discord class channel
 
+    --> set Veggies in GreenChickenBowl to true
+
 ////////////////////////
 
 Overall idea of git.
