@@ -10,14 +10,31 @@ Properties vs fields.
 
 --> autoproperty
 
+    public int Number {get; set;} // same as a field
+    public int Number2 {get;} // same as a const
+    public int Number3 {set;} // limited functionality as it can only be set to
+
 --> visibility
+
+    public int Number {get; private set;} // allows public get and private set
 
 --> default values
 
+    public int Number {get; set;} = 10; // assigns a default value that can then be updated
+    // if we don't initialize our own default value, the field will always be assigned the default value
+    // it's better to initialize the default value with the variable rather than in the constructor
+
 --> enforcing bounds
 
---> lambda notation
+    // straight forward approach to make sure code is valid
 
+--> lambda notation (expression-bodied member)
+
+    private int _num = 10;
+    public int Number {
+        get => _num;
+        set => _num = value;
+    }
 
 See LabRoom class. Turn fields into properties.
 --> enforce room size 10-30
@@ -41,12 +58,18 @@ public int Property
     }
 }
 
-
+// this will create a series of infinite recursion resulting in a stack overflow
 ----------------------------
 
 struct vs class
 
 differences in memory
+
+    class: create an object -> it is stored on the heap as a reference type
+           passed to a method: passes a reference (a pointer) to a location on the heap
+
+    struct: create an object -> stored on the stack as a value type
+            passed to a method: passes a copy
 
 when to use each
 
@@ -57,7 +80,11 @@ when to use each
 
 static vs non-static
 
+    class property/variable, not belonging to a particular instance
+
 when to use each?
+
+    
 
 what would a static field or property mean?
 
