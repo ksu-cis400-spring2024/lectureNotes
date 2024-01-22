@@ -2,7 +2,71 @@ Encapsulation tutorial: due tonight
 Properties tutorial: due Tuesday
 Milestone 1: due Friday
 
+--> update Veggies default to true in GreenChickenBowl
+
 ----------------------------
+
+Properties vs fields.
+
+--> autoproperty
+
+--> visibility
+
+--> default values
+
+--> enforcing bounds
+
+--> lambda notation
+
+
+See LabRoom class. Turn fields into properties.
+--> enforce room size 10-30
+--> make Windows value get-only (except on creation)
+    1) using a constructor
+    2) using init
+
+----------------------------
+
+Common mistake with properties:
+
+public int Property
+{
+    get
+    {
+        return Property;
+    }
+    set
+    {
+        Property = value;
+    }
+}
+
+
+----------------------------
+
+struct vs class
+
+differences in memory
+
+when to use each
+
+
+--> how to make PointStruct immutable?
+
+----------------------------
+
+static vs non-static
+
+when to use each?
+
+what would a static field or property mean?
+
+--> what if we wanted a consistent drinks policy (yes/no) across all
+    lab rooms?
+
+--> static constructor
+
+---------------------------------------------
 
 Encapsulation - what is this?
 
@@ -15,39 +79,8 @@ Want to keep track of scores and majors for students.
 
 ----------------------------
 
-struct vs class
 
-differences in memory
+Other vocab:
 
-
-----------------------------
-
-static vs non-static
-
-when to use each?
-
------------------------------
-
-Properties
-
---> autoproperty
-
---> visibility
-
---> init 
-
---> default values
-
---> enforcing bounds
-
---> lambda notation
-
---> properties vs fields
-
-
-See LabRoom class. Turn fields into properties.
---> enforce room size 10-30
---> make Windows value get-only (except on creation)
-    1) using a constructor
-    2) using init
-
+Information hiding
+State

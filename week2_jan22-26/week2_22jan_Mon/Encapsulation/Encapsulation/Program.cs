@@ -8,7 +8,18 @@ public class Program
 
     private static void Main(string[] args)
     {
-        _names = new();
+        //Create a PointStruct called p1 storing (3, 4)
+
+        //Make another, p2, and set equal to p1
+
+        //what happens when we change one?
+
+        //What happens when we pass to a method?
+
+
+
+        /*
+         _names = new();
         _scores = new();
         _majors = new();
 
@@ -19,31 +30,21 @@ public class Program
 
         //change major of Bob to MATH
 
-        _names.Add("Bob");
-        _scores.Add("Bob", new List<int> { 80, 70, 82 });
+         */
+    }
 
-
-        _names.Add("Jill");
-        _scores.Add("Jill", new List<int> { 95, 68, 88 });
-
-
-        PointStruct p1 = new() { X = 3, Y = 4 };
-
-        PointStruct p2 = p1;
-
-        p2.X = 5;
-        Console.WriteLine(p1.X);
-
+    private static void ChangePoint(PointStruct p)
+    {
 
     }
 
-    public static int GetAverage(string name)
+    private static double GetAverage(string name)
     {
-        throw new NotImplementedException();
+        return 0.0;
     }
 
-    public static void ChangeMajor(string name, string newMajor)
+    private static void ChangeMajor(string name, string newMajor)
     {
-        throw new NotImplementedException();
+        
     }
 }
