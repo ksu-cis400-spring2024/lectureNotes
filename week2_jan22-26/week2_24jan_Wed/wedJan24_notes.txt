@@ -1,0 +1,45 @@
+Milestone 1: due Friday
+
+--> a couple of corrections:
+
+RefriedBeans class: CheddarCheese should be true by default 
+    (also, its name should be "Refried Beans")
+StreetCorn class: Cilantro should be true by default
+SpicySteakBowl class: Veggies should be false by default
+ClassicNachos class: Steak should be true by default
+
+SpicySteakBowl class: 620 calories in default configuration
+
+--------------------------------------------
+
+Correction from Monday: accessing static properties
+
+---------------------------------------------
+
+Encapsulation - what is this?
+
+Want to keep track of scores and majors for students.
+    --> see current organization
+    --> why not great?
+    --> how to improve?
+
+What class to add? What fields/properties? 
+Where should methods go?
+
+----------------------------
+
+
+Other vocab:
+
+Information hiding
+State
+
+----------------------------------
+
+UML - Unified Modeling Language
+
+--> why?
+
+--> what kinds of diagrams?
+
+Draw UML for new Student class.
