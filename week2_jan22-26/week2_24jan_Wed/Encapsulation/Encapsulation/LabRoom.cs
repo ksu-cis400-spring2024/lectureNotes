@@ -29,17 +29,5 @@ namespace Encapsulation
         {
             DrinksAllowed = false;
         }
-
-        /*
-        public LabRoom(bool windows)
-        {
-            Windows = windows;
-        }
-        */
-
-        //LabRoom room = new LabRoom {Windows = false};
-
-        //LabRoom.DrinksAllowed = true;
-        //room.DrinksAllowed = false; //this changed policy for everyone
     }
 }

@@ -10,6 +10,10 @@ ClassicNachos class: Steak should be true by default
 
 SpicySteakBowl class: 620 calories in default configuration
 
+
+--> Week 3 module will be published automatically just after midnight
+    Friday morning (similar structure as this week)
+
 --------------------------------------------
 
 Correction from Monday: accessing static properties
@@ -24,7 +28,7 @@ Want to keep track of scores and majors for students.
     --> how to improve?
 
 What class to add? What fields/properties? 
-Where should methods go?
+Where should methods go? Could average be a property?
 
 ----------------------------
 
