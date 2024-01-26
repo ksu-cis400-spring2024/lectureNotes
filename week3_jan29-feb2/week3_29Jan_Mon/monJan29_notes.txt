@@ -1,0 +1,93 @@
+Monday: Methods tutorial
+Tuesday: Documentation tutorial
+Friday: Milestone 2
+
+--> in general, you don't have to document tutorials
+(...except the documentation tutorial...)
+
+///////////////////////////
+
+Topics for the week:
+- program memory
+- objects in memory
+- ways to initialize fields/properties
+- enums
+- decimal type
+- uint type
+- C# namespace vs folder structure
+
+
+/////////////////////////
+
+Sections in memory:
+
+- stack
+- heap
+- static
+
+--> what goes on each part?
+
+
+Person p = new Person("Bob", 20);
+
+--> what happens in memory?
+
+--> does it make a difference if "Person p" is a field/property vs a local variable?
+
+
+////////////////////////
+
+Ways to initialize fields/properties at time object is created.
+
+(See Person class)
+
+
+////////////////////////
+
+When can we do this?
+
+    ClassName obj = new ClassName();
+
+////////////////////////
+
+enums.
+
+public enum SomeName 
+{
+    Value1, Value2, ...
+}
+
+
+
+--> are really ints (0, 1, 2, ...). Can be cast to ints in this way.
+
+
+public enum Soda
+{
+    Sprite,
+    DrPepper,
+    DietCoke,
+    Coke   
+}
+
+--> declare an enum variable, set to Sprite
+
+--> print it (use an interpolated string). What prints?
+
+--> what if it had the value DrPepper? What would print?
+
+--> how to loop through all enum values?
+
+
+////////////////////////////////
+
+- decimal type
+
+
+
+- uint type
+
+
+
+- C# namespace vs folder structure
+
