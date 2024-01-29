@@ -22,26 +22,49 @@ Topics for the week:
 
 Sections in memory:
 
-- static
-- stack
-- heap
+- static: unchanging (size of static memory does not change)
+    program itself, literals, static variables 
+
+- stack: scoped variables (global, methods, loop, conditional)
+    when does the stack grow? when I enter a new scope,
+        space goes on top of stack for the variables defined in that scope
+    when does the stack shrink? when I leave a scope
+        (all variables defined in that scope are popped off)
+
+- heap: all dynamic memory ("new" keyword - object, array)
+
 
 --> What goes on each part?
 
 
---> Can static variables change? Can static memory size change? Memory leak issues?
+--> Can static variables change? yes 
+Can static memory size change? no
+
+
+Memory leak issues?
 
 
 
 
---> When does stack grow and shrink? Is it limited in size?
-    Is memory for ALL value types on the stack?
+--> When does stack grow and shrink? 
+    grows: entering scopes
+    shrinks: exiting scopes
+
+Is it limited in size? yes (stack overflow exception - infinite recursion)
+    Is memory for ALL value types on the stack? no 
+        fields of an object on the heap
+        static value types in static memory
 
 
 
 --> Is ALL memory for reference types on the heap? Is it limited in size?
     When is memory released?
 
+
+yes - out of memory exception
+
+released: by the garbage collector (when that memory no longer referenced
+by anything on stack/static)
 
 
 //////////////////////////
@@ -50,7 +73,13 @@ Sections in memory:
 
 --> want Bob, age 20, lives at 123 Fake St in MadeUp, KS
 
---> how could we create Bob? What happens in memory?
+--> how could we create this? What happens in memory?
+
+Address p = new Person("Bob", 20);
+
+--> what happens in memory?
+
+--> does it make a difference if "p" is a field/property vs a local variable?
 
 
 ////////////////////////
@@ -90,16 +119,34 @@ public enum Soda
 
 --> declare an enum variable, set to Sprite
 
+Soda s = Soda.Sprite;
+
+
 --> print it (use an interpolated string). What prints?
+
+//I am drinking Sprite
+
+$"text {variable} "
+
+s.ToString()
+
+Console.WriteLine($"I am drinking {s}");
+
 
 --> what if it had the value DrPepper? What would print?
 
 --> how to loop through all enum values?
 
+foreach (Soda s in Enum.GetValues(typeof(Soda))) {
+
+}
+
 
 ////////////////////////////////
 
 - decimal type
+
+decimal - currency
 
 
 
