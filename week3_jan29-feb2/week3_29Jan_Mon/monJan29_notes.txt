@@ -1,6 +1,7 @@
 Monday: Methods tutorial
 Tuesday: Documentation tutorial
 Friday: Milestone 2
+    correction: corn dog bites kids meal is $0.75 per additional bite
 
 --> in general, you don't have to document tutorials
 (...except the documentation tutorial...)
@@ -21,18 +22,35 @@ Topics for the week:
 
 Sections in memory:
 
+- static
 - stack
 - heap
-- static
 
---> what goes on each part?
+--> What goes on each part?
 
 
-Person p = new Person("Bob", 20);
+--> Can static variables change? Can static memory size change? Memory leak issues?
 
---> what happens in memory?
 
---> does it make a difference if "Person p" is a field/property vs a local variable?
+
+
+--> When does stack grow and shrink? Is it limited in size?
+    Is memory for ALL value types on the stack?
+
+
+
+--> Is ALL memory for reference types on the heap? Is it limited in size?
+    When is memory released?
+
+
+
+//////////////////////////
+
+--> see Person.cs 
+
+--> want Bob, age 20, lives at 123 Fake St in MadeUp, KS
+
+--> how could we create Bob? What happens in memory?
 
 
 ////////////////////////
