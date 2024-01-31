@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace NamespaceFolders
 {
-    public class Test
+    internal class NewFile
     {
-        public Test()
-        {
-            FileToMove f = new FileToMove();
-            NewFile t = new();
-        }
     }
 }

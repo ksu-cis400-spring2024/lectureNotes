@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace NamespaceFolders
 {
-    public class Test
+    internal enum MyEnum
     {
-        public Test()
-        {
-            FileToMove f = new FileToMove();
-            NewFile t = new();
-        }
+        Value, Value2
     }
 }

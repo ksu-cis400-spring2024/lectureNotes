@@ -42,19 +42,20 @@ Cannot do:
 
 - uint type
 
-unsigned integer 
-why?
+unsigned integer - can't be negative
+why? some things don't make sense to have a negative value
 
 uint num = 0;
 num--;
 
---> what happens?
+--> what happens? num overflows to be the biggest possible uint
 
 
 --> can use "u" suffix, but not required
     (will get compiler error if initialize to a negative literal)
 
 
+uint num = -1; //will not compile
 
 ////////////////////////
 
@@ -88,14 +89,16 @@ Milestone 2
 --> be sure to enforce bounds of count on kids meals
 
 --> "base" calories for sides/drinks (except milk) are for a medium
-    --> find the base calories first, deducting calories for any excluded toppings
+    --> find the base calories first, deducting calories 
+        for any excluded toppings
     --> THEN, scale your value to get the calories for a different size
 
     e.g., large refried beans with no cheddar cheese:
         base calories (default medium): 300
-        deduct 90 points if no cheese: 210
+        deduct 90 calories if no cheese: 210
         multiply by 1.6 to get calories for a large --> 336
             --> will need to cast back to uint
+            (uint)(cals*1.6)
 
 --> be sure to document!
 
