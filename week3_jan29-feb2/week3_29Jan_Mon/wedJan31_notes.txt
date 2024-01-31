@@ -1,0 +1,102 @@
+Turn in methods/documentation tutorials if haven't already
+Milestone 2 due Friday, February 2
+
+////////////////////
+
+decimal type
+
+- intended for currency
+- represents number in base 10 (unlike base 2 for double)
+- can accurately represent a real number with a non-repeating decimal
+    - base 10 decimal values cannot be accurately represented by a double
+        (assuming we are only looking at two digits after the decimal)
+
+- decimal will throw overflow exception, double will not
+
+
+
+- use m as the suffix for a decimal literal
+
+
+Can do:
+    decimal dec = 1.25m;
+    dec += 1;
+
+--> why?
+
+
+Cannot do:
+    decimal dec = 1.25m;
+    dec += 1.0;
+
+Cannot do:
+    decimal dec = 1.25m;
+    double doub = dec;
+
+
+
+--> when to use doubles/floats?
+
+
+/////////////////////////////////////
+
+- uint type
+
+unsigned integer 
+why?
+
+uint num = 0;
+num--;
+
+--> what happens?
+
+
+--> can use "u" suffix, but not required
+    (will get compiler error if initialize to a negative literal)
+
+
+
+////////////////////////
+
+- C# namespace vs folder structure
+
+- see creating a new folder in Visual Studio
+
+- see moving an existing file into a new folder
+
+- see creating a new file in a new folder
+
+--> how to check project namespace
+
+
+////////////////////////
+
+Milestone 2
+
+- add Size, Flavor, Salsa enums
+    (why use enums instead of strings?)
+
+- each bowl/nachos has a SalsaChoice property now
+
+- each drink and "side" has a Size now
+
+- Horchata now has more calories if there is no ice
+
+- new classes: AguaFresca, 3 kinds of kids meals
+
+
+--> be sure to enforce bounds of count on kids meals
+
+--> "base" calories for sides/drinks (except milk) are for a medium
+    --> find the base calories first, deducting calories for any excluded toppings
+    --> THEN, scale your value to get the calories for a different size
+
+    e.g., large refried beans with no cheddar cheese:
+        base calories (default medium): 300
+        deduct 90 points if no cheese: 210
+        multiply by 1.6 to get calories for a large --> 336
+            --> will need to cast back to uint
+
+--> be sure to document!
+
+--> reorganize code into folders. Be careful! Might rename namespaces.
