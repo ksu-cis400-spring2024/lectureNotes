@@ -1,0 +1,77 @@
+Monday: Interfaces tutorial
+Tuesday: Testing tutorial
+Friday: Milestone 3
+
+///////////////////////
+
+What goes in an interface?
+
+What is the purpose?
+
+naming convention
+
+//////////////////////
+
+Example: Chicken and Dog
+
+- what if we wanted a list of several chickens and dogs? 
+
+- what do they have in common? how could we refactor?
+
+- how to use?
+
+
+--> what does polymorphism mean?
+
+//////////////////////
+
+Implementing an existing interface.
+
+- want a set of dogs, sorted by name (SortedSet)
+
+--> what happens now? how to fix?
+
+--> implementing multiple interfaces
+
+--> what are ALL the options of a type that can be used to store a Dog?
+
+///////////////////////
+
+Want AnimalList class
+- stores animals in a list
+- DogCount, ChickenCount properties
+- has a foreach loop
+
+- ICollection
+
+////////////////////////
+
+Implicit casting vs explicit casting
+
+- examples with Dog/Animal
+
+- when must we explicitly cast?
+
+
+as keyword
+
+
+is keyword
+
+////////////////////////
+
+Creating an XUnit testing project
+
+Adding a project reference
+
+Basics of writing a unit test
+
+- Fact unit test
+
+- Theory unit test (add Age property, DogYears property)
+
+////////////////////////
+
+Wednesday:
+- discuss nullables
+- writing unit tests
