@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace InterfaceExamples
 {
-    public class Chicken
+    public class Chicken : IAnimal
     {
+        
         public string Sound()
         {
             return "Cluck";
         }
 
-        public int Legs => 2;
+        public uint Legs { get; set; } = 2;
     }
 }

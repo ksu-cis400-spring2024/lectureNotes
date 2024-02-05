@@ -1,20 +1,26 @@
 Monday: Interfaces tutorial
 Tuesday: Testing tutorial
 Friday: Milestone 3
+    --> check your release!
 
 ///////////////////////
 
 What goes in an interface?
+    method signatures/stubs/headers
+    property definitions
 
 What is the purpose?
+    a contract for any class that implements an interface
+    list of required features
 
-naming convention
+naming convention - start with I
 
 //////////////////////
 
 Example: Chicken and Dog
 
-- what if we wanted a list of several chickens and dogs? 
+- what if we wanted a list of several chickens and dogs, 
+    and to get the sound of each?
 
 - what do they have in common? how could we refactor?
 
@@ -23,40 +29,71 @@ Example: Chicken and Dog
 
 --> what does polymorphism mean?
 
+many forms
+
+Dog d = new Dog();
+IAnimal a = d;
+object o = d;
+IComparable<Dog> id = d;
+
+
 //////////////////////
 
 Implementing an existing interface.
 
-- want a set of dogs, sorted by name (SortedSet)
 
---> what happens now? how to fix?
 
---> implementing multiple interfaces
+Implementing multiple interfaces.
 
---> what are ALL the options of a type that can be used to store a Dog?
 
 ///////////////////////
 
-Want AnimalList class
-- stores animals in a list
-- DogCount, ChickenCount properties
-- has a foreach loop
+(What are we going to do with our menu items?)
 
-- ICollection
-
-////////////////////////
+//////////////////////
 
 Implicit casting vs explicit casting
 
+double pi = 3.14;
+int val = (int) pi; //is explicit type casting
+
+int num = 3;
+double d = num; //is implicit type casting
+
+
+going from a more specific type to a less specific type
+    no (use implicit type casting)
+
+going from a less specific type to a more specific type
+    yes (must explicitly cast)
+
+
 - examples with Dog/Animal
+
+Dog d = (something);
+IAnimal a = d; //fine with implicit casting
+
+IAnimal another = (something);
+Dog d2 = (Dog) another; //explicit casting required
+
 
 - when must we explicitly cast?
 
 
 as keyword
 
+IAnimal another = (something);
+Dog d2 = another as Dog; //if another is a Dog, will do casting
+                    //if not, d2 will be null
+
+
 
 is keyword
+
+IAnimal another = (something);
+if (another is Dog d2) {
+    //use d2 like a Dog
+}
 
 ////////////////////////
 
@@ -68,10 +105,11 @@ Basics of writing a unit test
 
 - Fact unit test
 
-- Theory unit test (add Age property, DogYears property)
+- Theory unit test (add Age property, PeopleYears property)
 
 ////////////////////////
 
 Wednesday:
 - discuss nullables
 - writing unit tests
+- implementing a collection
