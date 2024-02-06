@@ -1,0 +1,28 @@
+Friday: Milestone 3
+    --> check your release!
+
+//////////////////////
+
+Finish people years unit test
+
+How to choose inline data?
+
+//////////////////////
+
+Kinds of asserts
+
+//////////////////////
+
+What to test?
+
+
+What kind of inline data?
+
+
+How to test preparation information?
+
+Kids meals?
+
+//////////////////////////////////
+
+Implementing ICollection
