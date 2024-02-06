@@ -3,6 +3,32 @@ Friday: Milestone 3
 
 //////////////////////
 
+Nullables
+
+type? name;
+
+Means name can hold variable with that type, or can be null
+
+will get compiler warning if a reference might be null
+
+
+value types can be nullable too (it turns them into a reference type):
+
+    int? a = null;
+
+
+
+null condition operator
+
+    Dog? d = null;
+    d?.Print(); //would call Print only if d not null
+
+
+
+
+
+///////////////////////
+
 Finish people years unit test
 
 How to choose inline data?
@@ -11,18 +37,47 @@ How to choose inline data?
 
 Kinds of asserts
 
+    Assert.Equal(expected, actual);
+    Assert.Equal(expected, actual, precision);
+
+    Assert.True(value);
+    Assert.False(value);
+
+    Assert.Contains(expectedItem, collection);
+
 //////////////////////
 
-What to test?
+What to test in Milestone 3?
+
+- should have a separate test class for each data class
+    - test default values for all properties whose value can change
+        (it is OK if you don't test default for preparation information)
+
+    - test any bounds for properties (which ones?)
+
+    - test each derived property based on possible configurations
+        which ones?
 
 
-What kind of inline data?
+Example: CarnitasBowl
+    Carnitas, Queso, PintoBeans - on
+    Salsa.Medium
+    Veggies, SourCream, Guacamole - off
 
+    what to do for defaults test?
 
-How to test preparation information?
+    any bounds?
+
+    what to do for derived properties?
+
+    how to test preparation information?
+
 
 Kids meals?
+    Defaults?
 
-//////////////////////////////////
+    Bounds?
 
-Implementing ICollection
+    Derived properties?
+
+    E.g., Calories

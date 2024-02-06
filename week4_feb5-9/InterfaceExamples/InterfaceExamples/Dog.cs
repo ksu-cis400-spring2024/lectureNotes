@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace InterfaceExamples
 {
-    public class Dog : IAnimal, IComparable<Dog>
+    public class Dog : IAnimal
     {
         public string Sound()
         {
             return "Woof";
         }
 
-        public int CompareTo(Dog? other)
+        public void Print()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(Sound());
         }
 
         public uint Legs { get; set; } = 4;
