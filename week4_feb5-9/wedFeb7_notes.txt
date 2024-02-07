@@ -3,13 +3,18 @@ Friday: Milestone 3
 
 //////////////////////
 
+Implementing a collection
+
+//////////////////////
+
 Nullables
 
-type? name;
+    type? name;
 
-Means name can hold variable with that type, or can be null
+What does it mean? name is allowed to be null
 
-will get compiler warning if a reference might be null
+Why use them? will get compiler error if you don't check one for null first
+
 
 
 value types can be nullable too (it turns them into a reference type):
@@ -20,7 +25,7 @@ value types can be nullable too (it turns them into a reference type):
 
 null condition operator
 
-    Dog? d = null;
+    Dog? d = (some value)
     d?.Print(); //would call Print only if d not null
 
 
@@ -33,17 +38,21 @@ Finish people years unit test
 
 How to choose inline data?
 
+More than one assert per test?
+
 //////////////////////
 
 Kinds of asserts
 
     Assert.Equal(expected, actual);
-    Assert.Equal(expected, actual, precision);
+    Assert.Equal(expected, actual, decimalPlacesToCheck);
 
     Assert.True(value);
     Assert.False(value);
 
     Assert.Contains(expectedItem, collection);
+
+    Assert.All(collection, item => (an assert for current item));
 
 //////////////////////
 
@@ -53,10 +62,15 @@ What to test in Milestone 3?
     - test default values for all properties whose value can change
         (it is OK if you don't test default for preparation information)
 
-    - test any bounds for properties (which ones?)
+
+    - test any bounds for properties (which ones?) kids meals
+
 
     - test each derived property based on possible configurations
-        which ones?
+        which ones? 
+
+        Calories, Price, PreparationInformation
+        don't have to have more than 8 test cases per unit test
 
 
 Example: CarnitasBowl
@@ -65,19 +79,60 @@ Example: CarnitasBowl
     Veggies, SourCream, Guacamole - off
 
     what to do for defaults test?
+        Assert.True(obj.Carnitas);
+        (etc for other toppings)
+        make sure salsa choice is Salsa.Medium
+        calories - 680
+        price - $9.99
 
-    any bounds?
 
-    what to do for derived properties?
+    any bounds? no
+
+    what to do for derived properties? what kinds of test cases? theory
+        Price
+        Calories
+        PreparationInformation
+
+        parameters: bools for each topping, salsa, expected value for property
+
+        inline data: all true, all False
+        different values for each parameters
+        all the different salsas
+
+
+    What about price (only guac affects price)?
+        still test based on different configurations to make sure they 
+        DON'T affect it
+
 
     how to test preparation information?
+        InlineData[(..., new string[]{"Add Sour Cream", "Hold Queso"})]
+
+        param: string[]
+
+        want to make sure that every item in the param array is in the 
+            PreparationInformation
+
+
 
 
 Kids meals?
-    Defaults?
+    Defaults (sliders)?
+        Count (2)
+        Drink choice (not chocolate)
+        Side choice (not curly, kids)
+        Price $5.99
+        (calories) - can just do as derived
+        Cheese
 
-    Bounds?
+    Bounds? Count (2 to 4)
+        take bad values as parameters
+        make sure count doesn't change after setting to bad
 
     Derived properties?
+        Calories - (cheese), count
 
-    E.g., Calories
+        reported calories: ("main" calories) + calories for a side + calories for drink
+
+        assert that kids meal calories really is "main" calories +
+                    SideChoice.Calories + DrinkChoice.Calories

@@ -26,12 +26,10 @@ namespace InterfaceExamples
 
         public uint PeopleYears
         {
-            //this is unfinished
-
             //0 dog -> 0 person
             //1 dog -> 15 person
             //2 dog -> 24 person
-            //3 dog -> 29 
+            //3 dog -> 29 person
 
             get
             {

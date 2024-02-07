@@ -13,10 +13,17 @@ namespace TestExample
 
         [Theory]
         [InlineData(0, 0)]
-        public void DogPeopleAgeTest(uint age, uint expPeopleAge)
+        [InlineData(1, 15)]
+        [InlineData(2, 24)]
+        [InlineData(3, 24 + 1*5)]
+        [InlineData(15, 24 + 13*5)]
+        [InlineData(7, 24 + 5 * 5)]
+        public void DogPeopleAgeTest(uint years, uint expectedPeopleYears)
         {
             //will finish on Wednesday
+            Dog d = new() { Age = years};
 
+            Assert.Equal(expectedPeopleYears, d.PeopleYears);
         }
     }
 }
