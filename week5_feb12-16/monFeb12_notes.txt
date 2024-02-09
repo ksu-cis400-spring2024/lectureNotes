@@ -1,0 +1,68 @@
+Monday: Inheritance tutorial
+Tuesday: UML tutorial
+Friday: Milestone 4
+
+--> Milestone 4 is the last one of the first unit
+--> Exam 1 is Wednesday, February 21
+--> There will be no milestone due next week (and the week after we'll start WPF)
+--> Milestones 1-4 and all tutorials through this week must be 
+    submitted by Friday, February 23
+
+
+////////////////////////
+
+Inheritance 
+
+--> what is the idea?
+
+--> how is this different than interfaces?
+
+--> when should we refactor to use inheritance?
+
+
+Purpose of an abstract class? 
+
+Can an abstract class implement an interface?
+
+What do we have to do when we extend an abstract class?
+
+What do we have to do when we extend a "regular" class?
+
+How do we override a method/property?
+
+Do we HAVE to override things?
+
+Can we implement more than one interface? 
+
+Can we extend more than one abstract class?
+
+Can we extend more than one "regular" class?
+
+Does an abstract class have to have abstract methods/properties?
+
+
+--> protected
+
+
+--> how do constructors work with inheritance?
+
+
+--> different words for the "base" class?
+
+
+--> different words for the "child" class?
+
+
+////////////////////////
+
+See example: Students
+
+
+////////////////////////
+
+See example: Shirts
+
+- what is there in common?
+
+- how to refactor?
+
