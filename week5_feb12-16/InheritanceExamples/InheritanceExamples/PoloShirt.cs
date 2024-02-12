@@ -12,6 +12,7 @@ namespace InheritanceExamples
 
         private uint _quantity = 1;
 
+        //can only buy 1-5 polos
         public uint Quantity
         {
             get => _quantity;
