@@ -3,7 +3,7 @@ Tuesday: UML tutorial
 Friday: Milestone 4
 
 --> Milestone 4 is the last one of the first unit
---> Exam 1 is Wednesday, February 21
+--> Exam 1 is next Wednesday, February 21
 --> There will be no milestone due next week (and the week after we'll start WPF)
 --> Milestones 1-4 and all tutorials through this week must be 
     submitted by Friday, February 23
@@ -13,44 +13,93 @@ Friday: Milestone 4
 
 Inheritance 
 
---> what is the idea?
+--> what is the idea? identifying and abstracting away shared code
+    and identifying common features that you want all classes to have
 
 --> how is this different than interfaces?
+    I can have fully implemented code in a parent class that all children inherit
+
 
 --> when should we refactor to use inheritance?
+    several classes have the same properties (and maybe also the same implementation)
 
 
 Purpose of an abstract class? 
+    cannot be instantiated
+    can provide common implementation for SOME members
+    list common features that are done differently in the abstract class,
+        mark them as abstract
+
 
 Can an abstract class implement an interface?
+    yes
+    must fulfill interface requirements either by filling in the code
+        or listing those members as abstrac
+
 
 What do we have to do when we extend an abstract class?
+    public class Child : AbstractClass 
+
+    Child inherits all public / protected members from AbstractClass
+
+    this includes any abstract members from AbstractClass
+
+    if Child doesn't fully implement those abstract members, it must be 
+        marked abstract
+
 
 What do we have to do when we extend a "regular" class?
+    public class Child : ParentClass
+
+    it inherits: anything public/protected 
+
 
 How do we override a method/property?
+    1) in the parent, say "virtual"
+    2) in the child, say "override"
+
 
 Do we HAVE to override things?
+    no (we can, but don't have to)
+
 
 Can we implement more than one interface? 
+    yes
+
 
 Can we extend more than one abstract class?
+    no
+
 
 Can we extend more than one "regular" class?
+    no (we can only extend one class, abstract or otherwise)
+
 
 Does an abstract class have to have abstract methods/properties?
-
+    no
+    will be abstract if it is "public abstract class ..."
 
 --> protected
+    visibility: private + derived class
 
 
 --> how do constructors work with inheritance?
+    Baby e = new Baby();
+
+    Baby extends Parent, which extends Grandparent
+    in the Baby constructor, the default parent constructor 
+        is automatically called first.
+        The Parent constructor will automatically call the Grandparent
+            default constructor
+
+   
 
 
---> different words for the "base" class?
+--> different words for the "base" class? parent class, super class
+    (what we are inheriting from)
 
 
---> different words for the "child" class?
+--> different words for the "child" class? derived class, subclass
 
 
 ////////////////////////

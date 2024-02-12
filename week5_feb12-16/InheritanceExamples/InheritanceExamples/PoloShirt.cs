@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace InheritanceExamples
 {
-    public class PoloShirt
+    public class PoloShirt : Shirt
     {
-        public Color ShirtColor { get; init; } = Color.Black;
+        public PoloShirt()
+        {
+            _quantity = 1;
+            _baseCost = 24.99m;
+        }
 
-        private uint _quantity = 1;
-
-        //can only buy 1-5 polos
-        public uint Quantity
+        public override uint Quantity
         {
             get => _quantity;
             set
@@ -24,9 +25,5 @@ namespace InheritanceExamples
                 }
             }
         }
-
-        private decimal _baseCost = 24.99m;
-
-        public decimal Price => _baseCost * Quantity;
     }
 }

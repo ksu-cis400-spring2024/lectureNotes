@@ -44,7 +44,7 @@ namespace InheritanceExamples
             }
         }
 
-        public void Print()
+        public virtual void Print()
         {
             Console.WriteLine($"Name: {First} {Last}");
             Console.WriteLine($"GPA: {GPA}");
@@ -54,9 +54,8 @@ namespace InheritanceExamples
 
     public class UndergraduateStudent : Student
     {
-        public UndergraduateStudent(string first, string last)
+        public UndergraduateStudent(string first, string last) : base(first, last)
         {
-            //why an error?
         }
     
         //Print?
@@ -67,15 +66,32 @@ namespace InheritanceExamples
     {
         public string BachelorDegree { get; private set; }
 
-        public GraduateStudent(string first, string last, string degree)
+        public GraduateStudent(string first, string last, string degree) : base(first, last)
         {
-            First = first;
-            Last = last;
             BachelorDegree = degree;
-
-            //why an error?
         }
 
         //Print?
+        public override void Print()
+        {
+            Console.WriteLine($"Name: {First} {Last}");
+            Console.WriteLine($"GPA: {GPA}");
+            Console.WriteLine($"Degree: {BachelorDegree}");
+        }
     }
 }
+
+/*
+//YES! A graduate student IS a student
+Student s = new GraduateStudent("Amy", "Jones", "Math");
+s.Print();
+
+GraduateStudent stu = s as GraduateStudent;
+stu.Print();
+
+
+
+//NO! A student isn't necessarily a graduate student
+GraduateStudent g = new Student("John", "Doe");
+
+*/
