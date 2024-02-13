@@ -1,0 +1,79 @@
+Milestone 4: due Friday
+    - IMenuItem
+    - Ingredient enum/IngredientItem class
+        which ingredient + name + calories + price + included bool + default bool
+        --> why?
+        --> setting "default" bool
+        --> setting "included" bool
+        --> price?
+        --> rice/chips
+        --> salsa
+
+    - Entree class implements IMenuItem
+    - General Entree class implements IMenuItem
+        - "Base" ingredient (either chips or rice)
+        - Collection of possible ingredients (List<IngredientItem> or
+                                            Dictionary<Ingredient, IngredientItem>)
+            --> should hold ingredients for this entree
+
+        - General way to get calories 
+
+        - General way to get preparation information
+            --> how to do "Add ..." or "Hold ..."?
+            --> how to do "Swap ... Salsa" (might want a default salsa field)
+
+        - General way to define price for "build your own" items
+            --> 6.99 + price for each included topping
+
+    - Nacho, Bowl classes extend Entree
+        --> They are VALID menu items
+        --> Base = ? 
+        --> Ingredients = ?
+        --> Salsa = ?
+        --> do we override Price, Calories, or PreparationInformation?
+
+    - Specialty bowls/nacho extend Bowl or Nacho
+        - they need to add their own toppings
+            - what happens to old bools?
+            - not all toppings should be possible!
+            - remember to set default/included
+        - you might want constructors. Set default toppings, salsa.
+            --> remember that the parent constructor is called first
+        --> override Price, Calories, or PreparationInformation?
+
+
+    - Drink, Side are abstract, implement IMenuItem
+        - Collect together shared info from drinks and sides
+        - Make all drinks extend Drink, all side extend Side
+
+        --> Milk is just a kids-sized. Should DrinkSize be a property in Drink?
+
+    - KidsMeal is abstract, implements IMenuItem
+        - DrinkChoice should be type Drink, SideChoice should be type Side
+        - abstract out Count (how to have different bounds?)
+        - abstract out Price, Calories (how to account for differences?)
+        - abstract out PreparationInformation
+
+    - Order class implements ICollection<IMenuItem>
+        - Add, Remove, Contains, enumerators
+        - Allows you to add items to an Order
+        - Calculates subtotal, tax, total
+
+    - Create UML diagram (can use a different tool instead of Visio if you want)
+    - Update old tests for changes, add Bowl, Entree, and Order tests
+        --> you'll want to test make sure the #possible toppings is correct
+        --> make sure the "Base" is correct
+
+
+--> you can add fields, helper methods, and constructors
+
+
+
+--> UML can get messy - divide into sections, repeating if necessary
+
+
+Exam 1 is next Wednesday, February 21
+    - will be a mix of vocab / conceptual topics, plus some implementation
+    - we will review on Monday, February 19
+    - no tutorials or Milestone next week
+    - Milestone 1-4, all previous tutorials must be submitted by Fri Feb 23
