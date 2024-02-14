@@ -1,7 +1,8 @@
 Milestone 4: due Friday
     - IMenuItem
+
     - Ingredient enum/IngredientItem class
-        which ingredient + name + calories + price + included bool + default bool
+        ingredient + name + calories + price + included bool + default bool
         --> why?
         --> setting "default" bool
         --> setting "included" bool
@@ -9,37 +10,69 @@ Milestone 4: due Friday
         --> rice/chips
         --> salsa
 
-    - Entree class implements IMenuItem
-    - General Entree class implements IMenuItem
+    - Entree (abstract) class implements IMenuItem
         - "Base" ingredient (either chips or rice)
         - Collection of possible ingredients (List<IngredientItem> or
                                             Dictionary<Ingredient, IngredientItem>)
+
             --> should hold ingredients for this entree
 
-        - General way to get calories 
+            protected List<IngredientItem> _possibleToppings = new();
+
+            --> how to initialize? constructor (?)
+                we could create new IngredientItems for each possible topping
+                and add to _possibleToppings
+
+        - General way to get calories
+            Base.Calories + (sum of included toppings in collection) + salsa
+
 
         - General way to get preparation information
             --> how to do "Add ..." or "Hold ..."?
+                look at included/default bools in all IngredientItems
+
             --> how to do "Swap ... Salsa" (might want a default salsa field)
 
         - General way to define price for "build your own" items
-            --> 6.99 + price for each included topping
+            --> 7.99 + price for each included topping
+            --> mark virtual so the Specialty entrees can override
+
+        --> SalsaChoice = Salsa.Medium
+
+
 
     - Nacho, Bowl classes extend Entree
         --> They are VALID menu items
-        --> Base = ? 
-        --> Ingredients = ?
-        --> Salsa = ?
-        --> do we override Price, Calories, or PreparationInformation?
+        --> Base = ? initialize them to rice/chips in the constructor
+
+
+        --> Ingredients = (anthing different from Entree?) keep same
+
+        --> Salsa = (anthing different from Entree?) nothing different
+
+        --> do we override Price, Calories, or PreparationInformation?  nope
+
 
     - Specialty bowls/nacho extend Bowl or Nacho
+
+        public void GreenChickenBowl() {
+            //clear my topping collection
+
+            //what goes here?
+            _possibleToppings.Add(something with Chicken);
+            _possibleToppings.Add(something with Guacamole);
+
+            SalsaChoice = Salsa.Green;
+        }
+
         - they need to add their own toppings
-            - what happens to old bools?
+            - what happens to old topping bools? 
             - not all toppings should be possible!
             - remember to set default/included
-        - you might want constructors. Set default toppings, salsa.
-            --> remember that the parent constructor is called first
-        --> override Price, Calories, or PreparationInformation?
+        - you might want constructors or helper methods. Set default toppings, salsa.
+
+        --> override Price (yes!)
+        Calories (no!), or PreparationInformation (no!?
 
 
     - Drink, Side are abstract, implement IMenuItem
@@ -47,19 +80,29 @@ Milestone 4: due Friday
         - Make all drinks extend Drink, all side extend Side
 
         --> Milk is just a kids-sized. Should DrinkSize be a property in Drink?
+            could just make set not do anything
+
+
 
     - KidsMeal is abstract, implements IMenuItem
         - DrinkChoice should be type Drink, SideChoice should be type Side
-        - abstract out Count (how to have different bounds?)
-        - abstract out Price, Calories (how to account for differences?)
-        - abstract out PreparationInformation
+        - pull out Count (how to have different bounds?)
+            protected _defaultCount, _maxCount (init in kids meal constructor)
+
+        - Price, Calories? (how to account for differences?)
+
 
     - Order class implements ICollection<IMenuItem>
+        private List<IMenuItem> _items = new();
+
         - Add, Remove, Contains, enumerators
         - Allows you to add items to an Order
         - Calculates subtotal, tax, total
 
+
+
     - Create UML diagram (can use a different tool instead of Visio if you want)
+
     - Update old tests for changes, add Bowl, Entree, and Order tests
         --> you'll want to test make sure the #possible toppings is correct
         --> make sure the "Base" is correct
@@ -70,6 +113,21 @@ Milestone 4: due Friday
 
 
 --> UML can get messy - divide into sections, repeating if necessary
+
+
+--> Mock objects when testing (can we add accessors when implementing interface?)
+
+    (Will talk more about testing on Friday)
+
+    
+
+--> how to loop through all enum values?
+
+foreach (Soda s in Enum.GetValues(typeof(Soda))) {
+
+}
+
+
 
 
 Exam 1 is next Wednesday, February 21
