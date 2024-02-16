@@ -1,0 +1,20 @@
+Exam 1 is Wednesday, February 21 during class
+
+On paper, closed notes/computers
+
+No tutorials or milestone this week
+    (we'll start on the GUI with WPF next week)
+
+All previous tutorials and milestones must be submitted by Friday, February 23
+    --> regular "work day" on Friday if you need help finishing up
+        --> can also work on next week's module then
+
+
+Exam structure:
+- 5-10 multiple choice questions relating to the vocab words + general concepts
+- 5-6ish problems that involve writing code or drawing/interpreting UML
+    (esp. relating to inheritance, interfaces, properties/fields, unit tests) 
+
+//////////////////
+
+Work practice exam.
