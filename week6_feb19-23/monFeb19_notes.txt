@@ -1,3 +1,6 @@
+Any remaining milestone 4 questions?
+
+
 Exam 1 is Wednesday, February 21 during class
 
 On paper, closed notes/computers
@@ -13,8 +16,55 @@ All previous tutorials and milestones must be submitted by Friday, February 23
 Exam structure:
 - 5-10 multiple choice questions relating to the vocab words + general concepts
 - 5-6ish problems that involve writing code or drawing/interpreting UML
-    (esp. relating to inheritance, interfaces, properties/fields, unit tests) 
+
+//////////////////
+
+--> see Canvas modules for vocab list. Be familiar with when all are used.
+
+
+Major topics:
+
+- Encapsulation (writing general classes with fields/properties/methods/constructors,
+    creating and using objects)
+
+- Using properties (when private backing field is needed, enforcing bounds,
+    accessors, derived properties)
+
+- Writing unit tests (Fact, Theory, good test cases, Assert.Equal, Assert.Contains,
+    Assert.IsType<T>, Assert.IsAssignableFrom<T>, Assert.True, Assert.False,
+    using mock objects)
+
+- Interpreting a UML diagram, drawing a UML diagram
+    --> include ALL members (private and protected too)
+    --> associations: realization (implementing an interface - arrow towards interface)
+                has a dashed line
+            aggregation/composition (collection of objects) diamond (on the collection)
+                multiplicities (1 on the collection, 0..* or a specific number on object)
+            generalization (extending a class) - arrow goes towards base
+
+    --> marking properties?
+        don't have to show bounds/default
+        <<get, init>>
+
+    --> static? underline
+
+    --> abstract?  italicize
+
+    --> showing an inherited member?
+        just show the stuff that is written in that class
+
+
+- Interfaces: declaring an interface, implementing an interface, why we use
+
+- Inheritance: refactoring to have base/child classes, extending a class,
+    what is inherited, virtual, override, how constructors work, why we use
+
+- Abstract classes: declaring, extending, what is inherited, abstract vs virtual,
+    different from an interface
+
 
 //////////////////
 
 Work practice exam.
+
+(***See Exam material or Weekly clas material in Canvas for practice exam solution***)
