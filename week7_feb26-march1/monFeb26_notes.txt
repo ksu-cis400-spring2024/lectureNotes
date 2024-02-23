@@ -1,0 +1,123 @@
+Exam 1 discussion.
+
+Across both sections:
+
+High: ??
+Average: ??
+
+A (90-100): ?? students
+B (80-89): ?? students
+C (70-79): ?? students
+Below C: ?? students
+
+Discuss some problems.
+
+/////////////////////////////
+
+This week:
+- Today: WPF tutorial
+    - build a GUI
+    - edit controls
+
+- Tuesday: Resources and styles tutorial 
+    - add customization to all controls of a certain type
+    - kind of like CSS
+
+- Milestone 5:
+    - Write shell of GUI for the "point of sale" for the Build Your Bowl
+    - Clicking menu items should add them to the order display
+
+//////////////////////////
+
+WPF applications consist of:
+- MainWindow (this is what launches when your program starts)
+- A collection of UserControls that are placed on the MainWindow
+    or within another UserControl
+
+- Controls are laid out in layouts. Most common:
+    --> Grid
+    --> StackPanel
+    --> DockPanel
+
+When to use each?
+
+
+
+Most common library controls:
+    - Button
+    - TextBlock
+    - TextBox
+    - ListView
+    (later we will have check boxes, radio buttons, etc.)
+
+
+How to customize appearance?
+
+
+How to learn more?
+
+
+
+/////////////////////////
+
+Starting Milestone 5.
+    --> how to add a new project?
+    --> how to change the startup project?
+
+
+Look at sample GUI picture
+
+--> what will it do when it runs?
+    (see example of it running)
+
+--> some functionality will be missing for now.
+    - Order subtotal/total/tax being correctly displayed
+    - Being able to edit menu items
+    - Displaying more information about items than just the name
+    - Back to Menu / Cancel Order / Complete Order buttons
+
+//////
+
+Creating menu control
+    - what kind of layout?
+    - what kind of controls will you have?
+    - do you need to worry about spacing of other components?
+
+
+
+/////
+
+Creating order control
+    - what kind of layout?
+    - what kinds of controls will you have?
+    
+
+
+////
+
+Creating the MainWindow.
+    - how to lay out the menu and the order summary?
+    - how to get the buttons on the bottom?
+
+    Adding a custom control:
+
+    <local:YourControlClass/>
+
+    (can specify properties like Grid.Row, etc. as usual)
+
+
+////
+
+What is DataContext? How does it work?
+
+
+Order control should contain a ListView
+    - what should our DataContext be?
+
+    - where should we set it?
+
+    <ListView ItemsSource="{Binding}"/>
+
+    What does the "Binding" mean?
+
+
