@@ -1,0 +1,30 @@
+Milestone 5 due Friday.
+
+
+
+Creating the MainWindow.
+    - how to lay out the menu and the order summary?
+    - how to get the buttons on the bottom?
+
+    Adding a custom control:
+
+    <local:YourControlClass/>
+
+    (can specify properties like Grid.Row, etc. as usual)
+
+
+////
+
+What is DataContext? How does it work?
+    NOT an Order (at least not for this milestone)
+    ObservableCollection<IMenuItem>
+
+
+Order control should contain a ListView
+    - what should our DataContext be?
+
+    - where should we set it?
+
+    <ListView ItemsSource="{Binding}"/>
+
+    What does the "Binding" mean?

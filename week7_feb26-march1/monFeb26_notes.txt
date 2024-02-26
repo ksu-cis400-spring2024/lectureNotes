@@ -2,13 +2,13 @@ Exam 1 discussion.
 
 Across both sections:
 
-High: ??
-Average: ??
+High: 100/100 (3 students)
+Average: 84/100
 
-A (90-100): ?? students
-B (80-89): ?? students
-C (70-79): ?? students
-Below C: ?? students
+A (90-100): 28 students
+B (80-89): 27 students
+C (70-79): 19 students
+Below C: 4 students
 
 Discuss some problems.
 
@@ -35,19 +35,19 @@ WPF applications consist of:
     or within another UserControl
 
 - Controls are laid out in layouts. Most common:
-    --> Grid
-    --> StackPanel
+    --> Grid - in grid
+    --> StackPanel 
     --> DockPanel
 
 When to use each?
-
+    I like Grids.
 
 
 Most common library controls:
     - Button
-    - TextBlock
-    - TextBox
-    - ListView
+    - TextBlock (just to put text on the screen)
+    - TextBox (user input)
+    - ListView 
     (later we will have check boxes, radio buttons, etc.)
 
 
@@ -56,7 +56,7 @@ How to customize appearance?
 
 How to learn more?
 
-
+https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/how-to-create-apply-style?view=netdesktop-8.0
 
 /////////////////////////
 
@@ -68,7 +68,7 @@ Starting Milestone 5.
 Look at sample GUI picture
 
 --> what will it do when it runs?
-    (see example of it running)
+
 
 --> some functionality will be missing for now.
     - Order subtotal/total/tax being correctly displayed
@@ -109,6 +109,8 @@ Creating the MainWindow.
 ////
 
 What is DataContext? How does it work?
+    NOT an Order (at least not for this milestone)
+    ObservableCollection<IMenuItem>
 
 
 Order control should contain a ListView
