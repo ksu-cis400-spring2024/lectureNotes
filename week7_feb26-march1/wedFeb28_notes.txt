@@ -1,12 +1,10 @@
 Milestone 5 due Friday.
 
+--> setting the startup project
 
+////
 
-Creating the MainWindow.
-    - how to lay out the menu and the order summary?
-    - how to get the buttons on the bottom?
-
-    Adding a custom control:
+Adding a custom control:
 
     <local:YourControlClass/>
 
@@ -15,16 +13,33 @@ Creating the MainWindow.
 
 ////
 
-What is DataContext? How does it work?
-    NOT an Order (at least not for this milestone)
-    ObservableCollection<IMenuItem>
+Example: ObservableCollection as a DataContext
+
+    --> see code so far 
+    --> want to add different names to list
+    
+    --> what should our DataContext be? how to set?
+
+    --> what to do with ListView to bind it?
+
+    --> what should go in our AddName?
+
+    --> how to display the names?
 
 
-Order control should contain a ListView
-    - what should our DataContext be?
+    (Note: could have used ObservableCollection<string>
+    instead of the Person class - but wanted to show
+    adding new object.)
 
-    - where should we set it?
+////
 
-    <ListView ItemsSource="{Binding}"/>
+What will DataContext be for Milestone 5?
 
-    What does the "Binding" mean?
+
+Where should we set it?
+
+
+How many Click events?
+
+
+How to add correct item to the display?
