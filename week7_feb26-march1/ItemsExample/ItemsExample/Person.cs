@@ -14,5 +14,10 @@ namespace ItemsExample
         {
             Name = n;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

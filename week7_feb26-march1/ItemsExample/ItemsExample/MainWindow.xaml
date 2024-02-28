@@ -25,7 +25,7 @@
                 Add Mary
         </Button>
         
-        <ListView/>
+        <ListView ItemsSource="{Binding}"/>
         
     </DockPanel>
 </Window>

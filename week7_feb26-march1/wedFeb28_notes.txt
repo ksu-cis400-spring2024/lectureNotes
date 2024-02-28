@@ -6,7 +6,7 @@ Milestone 5 due Friday.
 
 Adding a custom control:
 
-    <local:YourControlClass/>
+    <local:YourControlClass Grid.Row="0" Grid.Column="1"/>
 
     (can specify properties like Grid.Row, etc. as usual)
 
@@ -40,12 +40,18 @@ Example: ObservableCollection as a DataContext
 ////
 
 What will DataContext be for Milestone 5?
+    ObservableCollection<IMenuItem>
 
 
 Where should we set it?
+    in the MainWindow constructor
 
+All the buttons for menu items are on the menu control
+    all have: Click="something"
 
-How many Click events?
+How many Click events? 1, in the code behind for the menu control
+    object sender -> need it to be type Button
+    DataContext -> need it to be type ObservableCollection<IMenuItem>
 
 
 How to add correct item to the display?
