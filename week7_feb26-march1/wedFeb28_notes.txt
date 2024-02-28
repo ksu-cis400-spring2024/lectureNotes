@@ -10,6 +10,12 @@ Adding a custom control:
 
     (can specify properties like Grid.Row, etc. as usual)
 
+////
+
+What is "DataContext"?
+
+What is "Binding"?
+
 
 ////
 

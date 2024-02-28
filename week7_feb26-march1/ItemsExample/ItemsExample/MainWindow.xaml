@@ -7,19 +7,19 @@
         mc:Ignorable="d"
         Title="Names List" Height="450" Width="300">
     <DockPanel>
-        <Button Name="Gloria" 
+        <Button Name="GloriaButton" 
                 DockPanel.Dock="Bottom"
                 Click="AddName">
             Add Gloria
         </Button>
 
-        <Button Name="John" 
+        <Button Name="JohnButton" 
             DockPanel.Dock="Bottom"
             Click="AddName">
                 Add John
         </Button>
 
-        <Button Name="Mary" 
+        <Button Name="MaryButton" 
             DockPanel.Dock="Bottom"
             Click="AddName">
                 Add Mary
