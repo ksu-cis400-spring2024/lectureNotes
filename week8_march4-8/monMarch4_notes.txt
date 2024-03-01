@@ -1,0 +1,99 @@
+Today: Data binding tutorial, part 1
+Tuesday: Data binding tutorial, part 2
+Friday: Milestone 6
+
+Milestone 6 summary:
+    - Update Order class so it can be our DataContext
+    - Display the name and price of items in the ListView
+    - Display order number, data, subtotal, tax, total 
+    - Implement cancel button 
+    - Allow items to be removed from the order
+
+
+--> see demo of Milestone 6
+
+--> this is one of the shorter milestones
+--> the two milestones after spring break are the biggest milestones
+--> I'll post Milestone 7 before spring break in case you 
+    want to start (it will be due the Friday after break)
+
+/////////////////////
+
+Data binding.
+
+- Controls on our front end are bound to data in the back end
+- Changing one changes them both
+
+In a control, can do something like:
+    Text = "{Binding PropertyName}"
+
+
+--> control will see if its DataContext has property called PropertyName
+    --> if it does, it displays PropertyName
+    --> if it doesn't, it displays nothing (no errors)
+
+
+Remember that different controls *can* have different DataContexts.
+
+If they don't define their own, they "inherit" the DataContext of the
+    control they were added to
+
+///////////////////////////////
+
+Example: GUI for voting in an election
+
+
+--> we want our Election names to be displayed in the ListView
+
+--> we want the total votes to be displayed in the top text block
+
+--> we want the current winner's info to be displayed on the RHS
+
+
+//////////////////////////////
+
+Step 1: what DataContexts?
+
+
+Overall?
+
+For the StackPanel on the RHS?
+
+Where should we set them?
+
+
+//////////////////////////////
+
+Step 2: update click event to cast a vote (how to add name to list?)
+
+
+//////////////////////////////
+
+Step 3: put data binding in the XAML
+
+    --> ListView
+    --> Total votes
+    --> Name, Votes count of winner
+
+/////////////////////////////
+
+Step 4: why don't things change?
+
+    --> INotifyCollectionChanged
+
+    --> INotifyPropertyChanged
+
+//////////////////////////////
+
+Step 5: why doesn't the winner change? What is the idea?
+
+
+/////////////////////////////
+
+What do you need to do with Order?
+
+What will you be binding?
+
+
+StringFormat=' {0:C}'
+
