@@ -27,6 +27,9 @@ Data binding.
 In a control, can do something like:
     Text = "{Binding PropertyName}"
 
+    or:
+        Text = "{Binding Path=PropertyName}"
+
 
 --> control will see if its DataContext has property called PropertyName
     --> if it does, it displays PropertyName
