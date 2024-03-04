@@ -5,7 +5,7 @@ Friday: Milestone 6
 Milestone 6 summary:
     - Update Order class so it can be our DataContext
     - Display the name and price of items in the ListView
-    - Display order number, data, subtotal, tax, total 
+    - Display order number, date, subtotal, tax, total 
     - Implement cancel button 
     - Allow items to be removed from the order
 
@@ -21,8 +21,12 @@ Milestone 6 summary:
 
 Data binding.
 
-- Controls on our front end are bound to data in the back end
-- Changing one changes them both
+Idea: front end display is bound to back end data. Changing one changes both.
+
+
+
+- Controls have a DataContext
+- an attribute in a control can be bound to a property in the control's DataContext
 
 In a control, can do something like:
     Text = "{Binding PropertyName}"
@@ -46,52 +50,48 @@ If they don't define their own, they "inherit" the DataContext of the
 Example: GUI for voting in an election
 
 
---> we want our Election names to be displayed in the ListView
+--> want candidates + vote counts displayed in ListView, with
+    ability to cast votes
+
+--> want to be able to add new candidates to list
 
 --> we want the total votes to be displayed in the top text block
 
---> we want the current winner's info to be displayed on the RHS
+--> we want the current winner's info to be displayed on the RHS (eventually)
 
 
 //////////////////////////////
 
-Step 1: what DataContexts?
+Step 1: ListView DataContext and items
 
 
-Overall?
-
-For the StackPanel on the RHS?
-
-Where should we set them?
 
 
-//////////////////////////////
+Where should we set it?
 
-Step 2: update click event to cast a vote (how to add name to list?)
+
+How to display name and #votes?
 
 
 //////////////////////////////
 
-Step 3: put data binding in the XAML
+Step 2: ability to cast a vote for current candidates
+    
+    --> what to do with button?
 
-    --> ListView
-    --> Total votes
-    --> Name, Votes count of winner
+    --> why isn't it updating?
+
+
+//////////////////////////////
+
+Step 3: how to add new candidates?
 
 /////////////////////////////
 
-Step 4: why don't things change?
+<--- stopped here, will continue on Wednesday
 
-    --> INotifyCollectionChanged
+////////////////////////////
 
-    --> INotifyPropertyChanged
-
-//////////////////////////////
-
-Step 5: why doesn't the winner change? What is the idea?
-
-
-/////////////////////////////
 
 What do you need to do with Order?
 
@@ -99,4 +99,15 @@ What will you be binding?
 
 
 StringFormat=' {0:C}'
+
+/////////////////////////////
+
+Next time:
+
+Step 4: update total number of votes?
+
+Step 5: how to display the winner?
+
+
+/////////////////////////////
 

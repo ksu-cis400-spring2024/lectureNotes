@@ -26,21 +26,37 @@ namespace ItemsExample
         public MainWindow()
         {
             InitializeComponent();
+            _election = new Election() {
+                new Candidate("Mary"),
+                new Candidate("George"),
+                new Candidate("Eliza")};
 
-            _election = new Election(new string[] { "Mary", "John", "Gloria" });
-            
-            //what DataContexts?
+            //what DataContext?
+            DataContext = _election;
+        }
+
+        private void AddCandidate(object sender, RoutedEventArgs e)
+        {
+            //create a new candidate with entered name
+            string name = CandName.Text;
+            Candidate c = new Candidate(name);
+
+            _election.Add(c);
         }
 
         private void CastVote(object sender, RoutedEventArgs e)
         {
-            //if I clicked Add Mary, I want to add Mary to my list
+            //add one to the corresponding candidate's vote
 
-            //how to get the (Election) DataContext?
+            //sender is the button that was clicked
+            //sender.DataContext is the candidate I am voting for
+
             if (sender is Button b)
             {
-                //b.Name contains the candidate name to add
-                
+                if (b.DataContext is Candidate c)
+                {
+                    c.Votes++;
+                }
             }
         }
     }

@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ItemsExample
 {
-    public class Election : ICollection<string>
+    public class Election : ICollection<Candidate>, INotifyCollectionChanged
     {
         private List<Candidate> _candidates = new();
-        private List<string> _allVotes = new();
-
-        public Election(string[] names)
-        {
-            foreach (string n in names)
-            {
-                _candidates.Add(new Candidate(n));
-            }
-        }
 
         public Candidate? Winner
         {
@@ -37,51 +30,48 @@ namespace ItemsExample
             }
         }
 
-        public void Vote(string n)
-        {
-            foreach (Candidate c in _candidates)
-            {
-                if (c.Name == n) c.Votes++;
-            }
-        }
-
-        public int Count => _allVotes.Count;
+        public int Count => _candidates.Count;
 
         public bool IsReadOnly => false;
 
-        public void Add(string item)
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
+
+        public void Add(Candidate item)
         {
-            _allVotes.Add(item);
+            _candidates.Add(item);
+
+            //want to invoke CollectionChanged
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
         }
 
         public void Clear()
         {
-            _allVotes.Clear();
+            _candidates.Clear();
         }
 
-        public bool Contains(string item)
+        public bool Contains(Candidate item)
         {
-            return _allVotes.Contains(item);
+            return _candidates.Contains(item);
         }
 
-        public void CopyTo(string[] array, int arrayIndex)
+        public void CopyTo(Candidate[] array, int arrayIndex)
         {
-            _allVotes.CopyTo(array, arrayIndex);
+            _candidates.CopyTo(array, arrayIndex);
         }
 
-        public IEnumerator<string> GetEnumerator()
+        public IEnumerator<Candidate> GetEnumerator()
         {
-            return _allVotes.GetEnumerator();
+            return _candidates.GetEnumerator();
         }
 
-        public bool Remove(string item)
+        public bool Remove(Candidate item)
         {
-            return _allVotes.Remove(item);
+            return _candidates.Remove(item);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return _allVotes.GetEnumerator();
+            return _candidates.GetEnumerator();
         }
     }
 }

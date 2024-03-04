@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ItemsExample"
         mc:Ignorable="d"
-        Title="Election" Height="450" Width="450">
+        Title="Election" Height="450" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -13,27 +13,24 @@
         </Grid.ColumnDefinitions>
 
         <DockPanel Grid.Column="0">
-            <Button Name="Gloria" 
-                DockPanel.Dock="Bottom"
-                Click="CastVote">
-                    Vote for Gloria
-            </Button>
-
-            <Button Name="John" 
-                DockPanel.Dock="Bottom"
-                Click="CastVote">
-                        Vote for John
-            </Button>
-
-            <Button Name="Mary" 
-                DockPanel.Dock="Bottom"
-                Click="CastVote">
-                        Vote for Mary
-            </Button>
-
             <TextBlock DockPanel.Dock="Top" Margin="20" Text="Total Votes: "/>
 
-            <ListView ItemsSource="{Binding}"/>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                <TextBlock Text="New Candidate Name: "/>
+                <TextBox Name="CandName" Width="80"></TextBox>
+                <Button Click="AddCandidate">Add Candidate</Button>
+            </StackPanel>
+            <ListView ItemsSource="{Binding}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name, StringFormat='Name: {0}'}"/>
+                            <TextBlock Text="{Binding Votes, StringFormat='Votes: {0}'}"/>
+                            <Button Click="CastVote">Cast Vote</Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </DockPanel>
 
