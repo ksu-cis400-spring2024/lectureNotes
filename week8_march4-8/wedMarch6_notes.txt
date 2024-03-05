@@ -1,0 +1,43 @@
+Milestone 6 summary:
+    - Update Order class so it can be our DataContext
+    - Display the name and price of items in the ListView
+    - Display order number, date, subtotal, tax, total 
+    - Implement cancel button 
+    - Allow items to be removed from the order
+
+--> video is in Milestone 6 writeup
+--> will post Week 9 module on Friday (incl. Milestone 7)
+
+--> UML questions?
+
+//////////////////////////
+
+More with example: display total votes and winner
+
+1) Display total votes
+
+    --> should we bind to Count in Election?
+
+    --> what causes the total votes to change?
+
+    --> how to notify user interface to redraw?
+
+
+2) Display winner
+
+    --> see Winner property in Election
+
+    --> what do we want to bind to?
+
+//////////////////////////
+
+Milestone 6: Order number
+
+how to make each subsequent order have the next number?
+
+    static variable
+
+
+ListView: HorizontalContentAlignment = "Stretch"
+
+Text="{Binding Total, StringFormat='Total: {0:C}'}"

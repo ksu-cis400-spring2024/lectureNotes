@@ -36,7 +36,7 @@
 
         <StackPanel Name="WinnerInfo" Margin="20" Grid.Column="1">
             <TextBlock Text="Current Winner:" FontSize="18"/>
-            <TextBlock Padding="10" Text="Name: "></TextBlock>
+            <TextBlock Padding="10" Text="Winner: "></TextBlock>
             <TextBlock Padding="10" Text="Votes: "></TextBlock>
         </StackPanel>
         
