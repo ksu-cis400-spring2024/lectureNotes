@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <DockPanel Grid.Column="0">
-            <TextBlock DockPanel.Dock="Top" Margin="20" Text="Total Votes: "/>
+            <TextBlock DockPanel.Dock="Top" Margin="20" Text="{Binding TotalVotes, StringFormat='Total Votes: {0}'}"/>
 
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
                 <TextBlock Text="New Candidate Name: "/>
@@ -36,8 +36,8 @@
 
         <StackPanel Name="WinnerInfo" Margin="20" Grid.Column="1">
             <TextBlock Text="Current Winner:" FontSize="18"/>
-            <TextBlock Padding="10" Text="Winner: "></TextBlock>
-            <TextBlock Padding="10" Text="Votes: "></TextBlock>
+            <TextBlock Padding="10" Text="{Binding Winner.Name, StringFormat='Name: {0}'}"></TextBlock>
+            <TextBlock Padding="10" Text="{Binding Winner.Votes, StringFormat='Votes: {0}'}"></TextBlock>
         </StackPanel>
         
     </Grid>

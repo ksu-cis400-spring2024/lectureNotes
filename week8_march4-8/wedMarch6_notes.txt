@@ -6,9 +6,10 @@ Milestone 6 summary:
     - Allow items to be removed from the order
 
 --> video is in Milestone 6 writeup
---> will post Week 9 module on Friday (incl. Milestone 7)
+--> will post Week 9 module on Friday, including Milestone 7
+    --> will include video for Milestone 7
+    --> I'll be away from email/Discord over spring break
 
---> UML questions?
 
 //////////////////////////
 
@@ -35,9 +36,16 @@ Milestone 6: Order number
 
 how to make each subsequent order have the next number?
 
-    static variable
+    static variable - keep track of what should be the NEXT order number
+
+    private static uint _nextNumber = 1;
+    private uint _myOrderNumber = _nextNumber++;
+
+--> testing Order number
 
 
 ListView: HorizontalContentAlignment = "Stretch"
 
 Text="{Binding Total, StringFormat='Total: {0:C}'}"
+
+Text="{Binding CurrentDate, StringFormat='Date: {0:D}'}"
