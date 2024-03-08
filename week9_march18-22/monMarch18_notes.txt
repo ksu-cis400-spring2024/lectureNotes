@@ -1,0 +1,125 @@
+Swapping controls and custom events tutorial: due Monday
+Custom controls and resources tutorial: due Tuesday
+Milestone 7: due Friday
+
+--> show Milestone 7 behavior
+
+
+////////////////////////////
+
+One of the tricky parts: swapping controls
+
+You will have several controls pre-loaded into space where menu goes
+
+Will update their Visibility with different actions
+
+
+Example: clicking a menu button (which is in the menu selection control)
+    should display the customization control for that item
+
+    --> essentially, need to send a message from the menu (where the action is)
+        to the MainWindow (where all the controls are stored)
+
+
+Step 1: think about what information needs to be sent (might be nothing). If needed,
+    create a custom event args class that extends RoutedEventArgs
+
+
+
+Step 2: in the class where the action takes place (menu selection), declare
+    a custom event whose type is your custom event args (if no info needed,
+    the type is RoutedEventArgs)
+
+        public event EventHandler<CustomArgType>? EventName;
+
+
+Step 3: whenever you want to send your message, invoke your custom event
+
+        EventName?.Invoke(this, new CustomArgType(params));
+
+
+Step 4: in the class where you want to handle the event, create an event handler
+    for an event with those custom event args
+
+
+Step 5: in the class where you want to handle the event, attach your custom
+    event handler to the event from the control sending the message
+
+
+/////////////////
+
+See example.
+
+- MainWindow has a TextBlock named "ColorText" and a user-defined ColorControl
+- ColorControl has RedButton (which is red) and BlueButton (which is blue)
+    --> both have a Click event handler named ClickColor
+
+--> goal: when we click the red button, want "Red" in the main windows TextBlock
+    (and similar when we click the blue button)
+
+
+///////////////////
+
+Custom event steps in MS7:
+1) Make a custom event args class that extends RoutedEventArgs. It should
+    contain the info needed about the event. (What is needed?)
+
+
+2) Declare an event with your custom args in the class where the action will happen
+    (where is this?)
+
+
+3) Invoke your event (with the info in a new custom args) when the action happens
+    (when would this be? How to get the info?)
+
+
+4) In the class where you want to make something happen, write an event handler 
+    method that takes a sender and a custom args. Do whatever is needed.
+    (where should the event handler be? what should it do?)
+
+5) In the same class as #4, attach your event handler to the event in #2
+    (where to do this?)
+
+
+/////////////////////
+
+Recommended order of approach:
+
+1) Load your enums as custom resources (Size, Salsa, Flavor)
+
+2) Mark that IMenuItem implements INotifyPropertyChanged
+
+3) Declare PropertyChanged event in all abstract classes
+
+4) Put protected helper method in all abstract classes
+
+    protected virtual void OnPropertyChanged(string propertyName)
+    {
+        this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+
+
+Pick an easy menu item (will need to repeat with all):
+
+5) Think about which properties can change, and what can cause that.
+    Call OnPropertyChanged to announce each property change
+
+6) Design a new user control for the menu item. Should have Name, Description,
+    a place to display/edit each customizable option.
+
+7) Preload your new control in MainWindow to the same spot as your menu selection
+    (initially hidden)
+
+8) Do the custom event handling as described so an event handler in MainWindow is   
+    invoked when a menu item is clicked
+
+9) Display your customization control and set its DataContext to the new item
+
+
+--> get this done with ONE control first
+
+--> will also need to handle order property changes when item properties change
+
+--> only need ONE Entree control (just salsa)
+
+--> only need ONE KidsMeal control (but do this last)
