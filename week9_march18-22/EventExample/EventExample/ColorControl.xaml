@@ -11,7 +11,7 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="RedButton" Click="ClickColor" Background="IndianRed" Grid.Column="0"/>
-        <Button Name="BlueButton" Click="ClickColor" Background="DarkBlue"  Grid.Column="1"/>
+        <Button Name="RedButton" Click="ClickColor" Background="IndianRed" Foreground="White" Grid.Column="0">Red Button</Button>
+        <Button Name="BlueButton" Click="ClickColor" Background="DarkBlue" Foreground="White" Grid.Column="1">Blue Button</Button>
     </Grid>
 </UserControl>
