@@ -71,21 +71,49 @@ Custom event steps in MS7:
 1) Make a custom event args class that extends RoutedEventArgs. It should
     contain the info needed about the event. (What is needed?)
 
+    IMenuItem
+
 
 2) Declare an event with your custom args in the class where the action will happen
     (where is this?)
 
+    in menu selection control
+
 
 3) Invoke your event (with the info in a new custom args) when the action happens
     (when would this be? How to get the info?)
+
+    your click event for a menu item
+
+
+    if (button pressed was Fries) {
+        order.Add(new Fries());
+        CustomEvent?.Invoke(this, new CustomEventArgs(new Fries()));
+        //NOOOOO! These are two different objects
+    }
 
 
 4) In the class where you want to make something happen, write an event handler 
     method that takes a sender and a custom args. Do whatever is needed.
     (where should the event handler be? what should it do?)
 
+
+    in MainWindow, write the custom event handler
+
+    private void HandleMenuClick(object sender, CustomEventArgs e) {
+        //switch which control is displayed
+
+        if (e.MenuItem is Fries) {
+            FriesControl.Visibility = Visibility.Visible;
+            FriesControl.DataContext = e.MenuItem;
+        }
+
+    }
+
 5) In the same class as #4, attach your event handler to the event in #2
     (where to do this?)
+
+    in MainWindow constructor
 
 
 /////////////////////
@@ -100,7 +128,7 @@ Recommended order of approach:
 
 4) Put protected helper method in all abstract classes
 
-    protected virtual void OnPropertyChanged(string propertyName)
+    protected void OnPropertyChanged(string propertyName)
     {
         this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }

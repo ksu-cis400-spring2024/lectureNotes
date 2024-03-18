@@ -23,6 +23,12 @@ namespace EventExample
         public MainWindow()
         {
             InitializeComponent();
+            MyControl.ColorEvent += HandleColorChange;
+        }
+
+        private void HandleColorChange(object? sender, ColorEventArgs e)
+        {
+            ColorText.Text = e.ColorInfo;
         }
     }
 }

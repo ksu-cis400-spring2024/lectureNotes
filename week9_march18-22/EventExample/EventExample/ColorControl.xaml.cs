@@ -20,6 +20,8 @@ namespace EventExample
     /// </summary>
     public partial class ColorControl : UserControl
     {
+        public event EventHandler<ColorEventArgs>? ColorEvent;
+
         public ColorControl()
         {
             InitializeComponent();
@@ -30,7 +32,17 @@ namespace EventExample
             //goal: display "Red" or "Blue" in the TextBlock in the main window
             //button names are "RedButton" and "BlueButton"
 
-            
+            //I want to change something in MainWindow
+
+            if (sender == RedButton)
+            {
+                ColorEvent?.Invoke(this, new ColorEventArgs("Red"));
+            }
+            if (sender == BlueButton)
+            {
+                ColorEvent?.Invoke(this, new ColorEventArgs("Blue"));
+            }
+
         }
     }
 }
