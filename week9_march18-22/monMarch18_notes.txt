@@ -2,20 +2,20 @@ Swapping controls and custom events tutorial: due Monday
 Custom controls and resources tutorial: due Tuesday
 Milestone 7: due Friday
 
---> show Milestone 7 behavior
+--> quick look at Milestone 7 behavior (video is in Canvas)
 
 
 ////////////////////////////
 
 One of the tricky parts: swapping controls
 
-You will have several controls pre-loaded into space where menu goes
+You will have several controls pre-loaded into the space where menu goes
 
-Will update their Visibility with different actions
+Will update their Visibility with different actions (only one visible at a time)
 
 
 Example: clicking a menu button (which is in the menu selection control)
-    should display the customization control for that item
+should display the customization control for that item (which is in the main window)
 
     --> essentially, need to send a message from the menu (where the action is)
         to the MainWindow (where all the controls are stored)
@@ -33,17 +33,24 @@ Step 2: in the class where the action takes place (menu selection), declare
         public event EventHandler<CustomArgType>? EventName;
 
 
+
 Step 3: whenever you want to send your message, invoke your custom event
 
         EventName?.Invoke(this, new CustomArgType(params));
 
 
+
 Step 4: in the class where you want to handle the event, create an event handler
     for an event with those custom event args
+
+    private void HandleCustomEvent(object? sender, CustomArgType e) {...}
+
 
 
 Step 5: in the class where you want to handle the event, attach your custom
     event handler to the event from the control sending the message
+
+    ControlName.EventName += HandleCustomEvent;
 
 
 /////////////////
