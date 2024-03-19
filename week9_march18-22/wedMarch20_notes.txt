@@ -1,0 +1,46 @@
+Swapping controls and custom events tutorial: due Monday
+Custom controls and resources tutorial: due Tuesday
+Milestone 7: due Friday
+
+///////////////////////
+
+What changes in Order when we customize menu items? How to handle?
+
+//////////////////////
+
+Kids Meals.
+
+- load all side controls into the same grid location 
+    (only Fries visible)
+- load all drink controls into the same grid location
+    (only Milk visible)
+
+Can put radio buttons into a group (only one can be selected)
+    with the same ? event:
+
+<RadioButton Name="Button1" Checked="OnChecked" GroupName="Group1">Option 1</RadioButton>
+<RadioButton Name="Button2" Checked="OnChecked" GroupName="Group1">Option 2</RadioButton>
+<RadioButton Name="Button3" Checked="OnChecked" GroupName="Group1">Option 3</RadioButton>
+
+Write the "OnChecked" event handler, which will run anytime you select a 
+radio button in that group.
+
+In the OnChecked method:
+    - see which RadioButton was the sender (Button1, Button2, or Button3)
+    - what should become visible/hidden?
+    - how to change the SideChoice/DrinkChoice of the KidsMeal?
+        --> how to get the KidsMeal?
+
+    - what needs to change about DataContext?
+
+
+--> make sure you invoke PropertyChanged in KidsMeal when 
+    changing SideChoice/DrinkChoice
+
+    --> what is affected?
+
+--> attach an event handler to the PropertyChanged event for the new 
+    SideChoice/DrinkChoice
+
+    --> why?
+    --> where done?
