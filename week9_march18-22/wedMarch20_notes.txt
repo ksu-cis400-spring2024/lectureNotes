@@ -6,41 +6,64 @@ Milestone 7: due Friday
 
 What changes in Order when we customize menu items? How to handle?
 
+Subtotal, Tax, Total 
+
+
+in Order's Add:
+
+item.PropertyChanged += (my own event handler);
+
+(in our own event handler, invoke PropertyChanged for Subtotal/Tax/Total)
+
 //////////////////////
 
 Kids Meals.
 
 - load all side controls into the same grid location 
-    (only Fries visible)
+
 - load all drink controls into the same grid location
-    (only Milk visible)
+    
 
 Can put radio buttons into a group (only one can be selected)
-    with the same ? event:
+    with the same Checked event:
 
 <RadioButton Name="Button1" Checked="OnChecked" GroupName="Group1">Option 1</RadioButton>
 <RadioButton Name="Button2" Checked="OnChecked" GroupName="Group1">Option 2</RadioButton>
 <RadioButton Name="Button3" Checked="OnChecked" GroupName="Group1">Option 3</RadioButton>
 
-Write the "OnChecked" event handler, which will run anytime you select a 
-radio button in that group.
 
-In the OnChecked method:
-    - see which RadioButton was the sender (Button1, Button2, or Button3)
+OnChecked event handler (executes when a RadioButton is selected):
+    - see which RadioButton was the sender
+
     - what should become visible/hidden?
+        whichever one was checked, the corresponding control becomes visible
+        everything else becomes hidden
+
+
     - how to change the SideChoice/DrinkChoice of the KidsMeal?
+
         --> how to get the KidsMeal?
+            from the DataContext (it is the KidsMeal we are customizing)
+            (the KidsMeal).SideChoice = new whatever one they want
+
 
     - what needs to change about DataContext?
+        (sub fries control).DataContext = (the KidsMeal).SideChoice;
 
 
 --> make sure you invoke PropertyChanged in KidsMeal when 
     changing SideChoice/DrinkChoice
 
-    --> what is affected?
+    --> what is affected? Price, PreparationInformation, Calories
+
+
 
 --> attach an event handler to the PropertyChanged event for the new 
     SideChoice/DrinkChoice
 
     --> why?
-    --> where done?
+    --> where done? attach event handler
+
+        in the set for SideChoice/DrinkChoice:
+
+        (new side/drink choice).PropertyChanged += (my own event handler);
