@@ -1,0 +1,138 @@
+Programmatic controls tutorial: due Monday
+MVVM tutorial: due Tuesday
+Milestone 8: due Friday
+
+
+//////////////////
+
+Side/drink choices for KidsMeal
+
+--> if you are displaying your custom kids meal control because a kids meal
+    is being ordered or edited:
+
+        (what will the kids meal side/drink be automatically when first ordered?)
+
+    1) Set the KidsMealControl DataContext to that kids meal
+    
+    2) Set "IsChecked" to true for the corresponding side/drink choice.
+        This will call your radio button Checked event handler in KidsMealControl.
+
+    3) In your Checked event handler:
+        - see if the current SideChoice matches the radio button that was just Checked
+            - if it does NOT?
+                make SideChoice be a new kids-sized side of that new type
+                    (--> why only then?)
+
+        - in ALL cases, look at the current SideChoice:
+            - make the corresponding side control visible
+            - make the DataContext of the corresponding side control be SideChoice
+        (similar for drink)
+
+//////////////////
+
+Milestone summary:
+
+- Allow ingredient customizations for Entree
+- Allow cheese option customization on sliders kids meal 
+- Implement "complete order" button
+
+/////////////////
+
+Ingredient customization.
+
+- Still use ONE Entree control for all bowls/nachos
+- You should have a List<IngredientItem> OR a Dictionary<Ingredient, IngredientItem>
+    --> this should contain ONLY those ingredients allowed for a particular entree 
+
+- If you stored ingredients as a Dictionary, you may want to create a new property
+    in Entree to expose a List of the IngredientItems:
+
+        ... => (name of Dictionary).Values.ToList();
+
+
+
+///////////////
+
+Good choice: display all possible ingredients in a ListView
+    --> each list item will be a check box / name of ingredient
+
+
+Two ways to populate:
+    1) Use same approach as programmatic controls video to add the check boxes
+        in the code-behind for the Entree control (call this method when you
+            display the control)
+
+    2) In Entree control XAML, make a ListView whose ItemsSource binds to your
+        list of IngredientItems. 
+
+            ItemsSource="{Binding IngredientListName}"
+        
+        
+        You can make a custom data template (like we did in
+        order summary) where you display a check box and TextBlock for each item
+
+        --> what would the DataContext of an item in the ListView be?
+        --> what would that mean we could bind to?
+
+
+////////////////////
+
+Handling PropertyChanged.
+
+--> IngredientItem?
+--> How to make sure Entree's properties change when ingredients change?
+
+///////////////////
+
+KidsMeal -- sliders should allow cheese customization.
+
+--> how to do this using the same control?
+
+
+
+///////////////////
+
+MVVM - Model-View-ViewModel
+
+--> common design pattern (esp. in mobile/web dev, but also desktop) similar
+    to MVC
+
+- Model holds the Data 
+- View is the XAML (ideally, with minimal code in the code-behind)
+- ViewModel handles the logic for the view -- it is the go-between
+    - ViewModel has an instance of the Model
+    - It exposes Model properties and/or includes additional properties with
+        logic about what should be displayed
+    - It serves as the DataContext for the View (so the View binds to
+        properties in the ViewModel)
+
+
+--> in full MVVM, each control would have a separate ViewModel. Instead of
+    click, etc. events in the code-behind, we would use Commands
+    (similar idea [still occur with particular actions] but invokes methods 
+    in the ViewModel that in turn would change our properties)
+
+
+///////////////////
+
+Payment control.
+
+- display final costs, allow user to enter payment info 
+- (will discuss data validation on Wednesday)
+
+PaymentViewModel:
+    - holds an Order instance
+    - is the DataContext for PaymentControl
+    - Contains properties for PaymentControl to bind to:
+        --> What to "pass through" from order?
+        --> What new properties?
+        --> property for whether a control is enabled?
+        --> property for text of an error message?
+
+    --> if we are binding to (changing!) properties in PaymentViewModel,
+        what does PaymentViewModel need to do so we get the changes?
+
+
+////////////////////
+
+Wednesday: discuss data validation
