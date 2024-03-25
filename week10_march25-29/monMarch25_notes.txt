@@ -10,18 +10,40 @@ Side/drink choices for KidsMeal
 --> if you are displaying your custom kids meal control because a kids meal
     is being ordered or edited:
 
-        (what will the kids meal side/drink be automatically when first ordered?)
 
     1) Set the KidsMealControl DataContext to that kids meal
+
     
     2) Set "IsChecked" to true for the corresponding side/drink choice.
         This will call your radio button Checked event handler in KidsMealControl.
 
-    3) In your Checked event handler:
+        e.g. if the SideChoice is Fries, do:
+        KidsCtrl.FriesButton.IsChecked = true;
+
+
+
+
+    3) In your Checked event handler (in kids meal control):
+
+        you know one of two things happened:
+            1) user clicked a radio button for a new side/drink choice
+                would mean radio button type was different than the 
+                current side/drink type, and we want to change the current
+                side/drink
+
+            2) as a result of setting IsChecked to true when displaying
+                kids meal control
+
+                we DON'T want to create a new side/drink, we just want to 
+                display the current one
+
         - see if the current SideChoice matches the radio button that was just Checked
             - if it does NOT?
                 make SideChoice be a new kids-sized side of that new type
                     (--> why only then?)
+
+                    it must be from a user wanted change
+
 
         - in ALL cases, look at the current SideChoice:
             - make the corresponding side control visible
@@ -47,7 +69,7 @@ Ingredient customization.
 - If you stored ingredients as a Dictionary, you may want to create a new property
     in Entree to expose a List of the IngredientItems:
 
-        ... => (name of Dictionary).Values.ToList();
+       public List<IngredientItem> AllIngredients => (name of Dictionary).Values.ToList();
 
 
 
@@ -65,11 +87,13 @@ Two ways to populate:
     2) In Entree control XAML, make a ListView whose ItemsSource binds to your
         list of IngredientItems. 
 
-            ItemsSource="{Binding IngredientListName}"
+            ItemsSource="{Binding IngredientItemListName}"
         
         
         You can make a custom data template (like we did in
         order summary) where you display a check box and TextBlock for each item
+            check box: bind to Included
+            text: bind to Name
 
         --> what would the DataContext of an item in the ListView be?
         --> what would that mean we could bind to?
@@ -79,8 +103,13 @@ Two ways to populate:
 
 Handling PropertyChanged.
 
---> IngredientItem?
+--> IngredientItem? implement INotifyPropertyChanged
+
+    when Included changes, invoke PropertyChanged
+
 --> How to make sure Entree's properties change when ingredients change?
+
+(each ingredient).PropertyChanged += YourOwnEventHandler;
 
 ///////////////////
 
@@ -125,13 +154,35 @@ PaymentViewModel:
     - is the DataContext for PaymentControl
     - Contains properties for PaymentControl to bind to:
         --> What to "pass through" from order?
+            subtotal, tax, total 
+
+            public decimal Subtotal => _order.Subtotal;
+
         --> What new properties?
+
+            payment amount, change
+            (payment amount is only one with a set)
+
+
         --> property for whether a control is enabled?
+
+            public bool IsGood {...}
+
+
+            IsEnabled="{Binding IsGood}"
+
         --> property for text of an error message?
+            can have either error message or nothing depending on
+            payment amount, can bind TextBlock to that
+
 
     --> if we are binding to (changing!) properties in PaymentViewModel,
         what does PaymentViewModel need to do so we get the changes?
 
+
+PaymentViewModel implement INotifyPropertyChanged
+
+should invoke PropertyChanged in the set for the payment amount
 
 ////////////////////
 
