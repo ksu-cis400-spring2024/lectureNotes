@@ -1,0 +1,23 @@
+Programmatic controls tutorial: due Monday
+MVVM tutorial: due Tuesday
+Milestone 8: due Friday
+
+/////////////////////////
+
+Data validation in WPF
+
+--> see similar example
+
+--> what if we wanted the cost display to disappear if the #shirts was invalid?
+
+/////////////////////////
+
+Printing the receipt
+
+/////////////////////////
+
+Upcoming:
+--> next week involves documentation, UML, testing based on MS7 and MS8 changes
+--> only one tutorial - on UML considerations in WPF
+--> NO CLASS next Friday (April 5) - Engineering Open House
+--> Exam 2 is the week after that (Wed April 10)
