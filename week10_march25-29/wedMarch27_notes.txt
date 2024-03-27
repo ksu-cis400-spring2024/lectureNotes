@@ -8,7 +8,11 @@ Data validation in WPF
 
 --> see similar example
 
---> what if we wanted the cost display to disappear if the #shirts was invalid?
+--> what if we wanted the cost to show as $0.00 for an invalid #shirts?
+
+
+--> binding to IsEnabled
+--> binding to a string that is either an error message or ""
 
 /////////////////////////
 
