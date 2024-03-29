@@ -1,0 +1,75 @@
+UML in WPF tutorial: due Monday
+Milestone 9: due Friday
+
+--> NO CLASS on Friday, April 5 (Engineering Open House)
+
+Exam 2: Wednesday, April 10
+
+--> will post review materials for next week's module
+--> Mon April 8 will be an exam review day
+--> no milestone/tutorials due next week
+--> we will start on Razor pages after the exam
+
+////////////////////////////////////
+
+Milestone 9.
+- Update UML to match current state of your application
+- Unit test all changes from Milestone 7 and 8 (PropertyChanged implementation)
+- Integration test (and a couple others) for ViewModel
+
+
+UML considerations:
+- denote the namespaces
+- fully qualify class (namespace.ClassName) if referring to a class
+    from a different namespace
+- indicate that MainWindow extends Window 
+- indicate that EVERY user control extends UserControl 
+- include all named controls, public properties/methods/events, and
+    event handlers (even if private) in UML
+- indicate the DataContext of EVERY control (unless it is inheriting
+    from a parent control)
+- indicate whenever a control is placed on another control
+
+
+--> recommendation: have sections on your UML:
+    - one for inheriting Window/UserControl
+    - one to show the DataContexts
+    - one to show the composition of controls on other controls
+
+
+//////////////////////////////////
+
+Unit tests.
+
+- test that EVERY menu item implements INotifyPropertyChanged
+- for each menu item:
+    --> think of which properties can change (either with a set 
+        or as a result of other properties changing)
+    --> test ALL combinations of (changingProperty, affectedProperty)
+        to ensure PropertyChanged is invoked
+
+--> for EACH entree type: try changing its ingredients to be
+    included/not included. Assert that such changes invoke
+    PropertyChanged for that entree (which properties change?)
+
+--> for KidsMeal: also create mock side an mock drink
+    Assert that its properties change when the mock side/drinks
+    sizes change
+
+--> Fully test IngredientItem (name, unit cost, calories,
+    defaults for included/default, PropertyChanged implementation)
+
+
+--> also complete the integration tests + other unit tests as 
+    described for PaymentViewModel.
+
+
+////////////////////////
+
+Example: Fries
+
+- implements INotifyPropertyChanged
+- changing size invokes PropertyChanged for size, calories,
+    price, preparation information
+- changing curly invokes PropertyChanged for preparation information
+
