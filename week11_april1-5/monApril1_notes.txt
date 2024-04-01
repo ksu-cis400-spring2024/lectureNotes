@@ -15,7 +15,7 @@ Exam 2: Wednesday, April 10
 Milestone 9.
 - Update UML to match current state of your application
 - Unit test all changes from Milestone 7 and 8 (PropertyChanged implementation)
-- Integration test (and a couple others) for ViewModel
+- Integration testing for ViewModel
 
 
 UML considerations:
@@ -52,7 +52,7 @@ Unit tests.
     included/not included. Assert that such changes invoke
     PropertyChanged for that entree (which properties change?)
 
---> for KidsMeal: also create mock side an mock drink
+--> for KidsMeal: also create mock side and mock drink
     Assert that its properties change when the mock side/drinks
     sizes change
 
@@ -60,16 +60,14 @@ Unit tests.
     defaults for included/default, PropertyChanged implementation)
 
 
---> also complete the integration tests + other unit tests as 
-    described for PaymentViewModel.
+--> also complete the integration tests described for PaymentViewModel.
 
 
 ////////////////////////
 
-Example: Fries
+Example: AguaFresca
 
 - implements INotifyPropertyChanged
-- changing size invokes PropertyChanged for size, calories,
-    price, preparation information
-- changing curly invokes PropertyChanged for preparation information
+- what properties can change? 
+    --> What properties are affected as a result of that change?
 
