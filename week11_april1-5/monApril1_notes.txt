@@ -51,13 +51,24 @@ Unit tests.
 --> for EACH entree type: try changing its ingredients to be
     included/not included. Assert that such changes invoke
     PropertyChanged for that entree (which properties change?)
+        Price, Calories, PreparationInformation
 
 --> for KidsMeal: also create mock side and mock drink
     Assert that its properties change when the mock side/drinks
     sizes change
+        mock side: extend Side
+        mock drink: extend Drink
+        set their size to be a specified value
+        assert that price, calories, preparation information 
 
 --> Fully test IngredientItem (name, unit cost, calories,
     defaults for included/default, PropertyChanged implementation)
+
+        for all ingredient types: test name/cost/calories
+        make sure included/default should be initially false
+        check that it implements INotifyPropertyChanged
+        check that changing Included invokes PropertyChanged
+            to say that it has changed
 
 
 --> also complete the integration tests described for PaymentViewModel.
@@ -69,5 +80,19 @@ Example: AguaFresca
 
 - implements INotifyPropertyChanged
 - what properties can change? 
+    size, flavor, ice
+
     --> What properties are affected as a result of that change?
+
+    size: price, calories, PreparationInformation, Size
+    flavor: calories, price, PreparationInformation, Flavor
+    ice: calories, PreparationInformation, Ice
+
+
+    public void Test(values for property, affectedProperty) {
+        create a new menu item
+        Assert.PropertyChanged(item, affectedProperty, () => {
+            item.changingProperty = value from paramater;
+        });
+    }
 
