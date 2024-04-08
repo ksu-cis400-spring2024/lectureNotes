@@ -1,4 +1,8 @@
-Exam 2: Wednesday, April 8. 
+All tutorials and milestones since Exam 1 must be submitted 
+    by Friday, April 12 for any partial credit
+
+
+Exam 2: Wednesday, April 10. 
 
 Paper-based, closed-notes, and closed-computers
 50 minutes in length
@@ -17,7 +21,7 @@ Topics:
 - Data binding
 
 - INotifyPropertyChanged and INotifyCollectionChanged, including how and when to 
-    invoke PropertyChanged
+    invoke PropertyChanged and how to listen to the PropertyChanged of another object
 
 - Events, including custom events, custom event arguments, invoking events, 
     attaching event handlers to events, and using events to send messages between objects
