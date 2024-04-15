@@ -1,0 +1,105 @@
+Exam 2.
+High: 100/100
+Average: 82/100
+
+A (90-100): 32 students
+B (80-89): 23 students
+C (70-79): 10 students
+D/F (below 70): 11 students
+
+Quickly see solution
+
+////////////////
+
+Begin Razor pages.
+- inject C# code into HTML to create dynamic web pages
+- will need to add new ASP.NET Core project
+    (might need to choose "install more tools and features"
+    when adding new project and then search for ASP bundle)
+
+Tutorial 1 : Intro to Razor Pages (due today)
+    - create a new ASP.NET Core project, review HTML and CSS,
+        see PageModels
+
+Tutorial 2: More with Razor Pages (due Tuesday)
+    - read in JSON of movie info, display on a webpage
+    - more with styling elements
+
+//////////////////////
+
+See: creating a new ASP.NET Core Web App (not MVC, or won't be cross platform)
+
+See: checking .NET version
+See: really quickly displaying something by using the PageModel
+
+//////////////////////
+
+Milestone 10: due Friday, April 19
+- Create a website for Build Your Bowl
+- About page, Privacy page
+- Home page displays ALL menu options, sectioned by
+    Entrees/Sides/Drinks/KidsMeals
+    --> also show available ingredients, salsas under Entrees
+
+- Idea: create instance of all (as much as is reasonable...) so they're there
+    and ready to search for next week
+
+    Entrees: just create defaults (too many combinations to be reasonable)
+    Sides: create all possible combinations
+    Drinks: create all possible combinations (EXCEPT Ice customization)
+    KidsMeals: create all possible combinations of kids/default side/drink 
+        (plus slider combinations). Can keep default counts.
+
+- Example: Street Corn. What combinations?
+    cotija cheese - 2 (T/F)
+    cilantro - 2 (T/F)
+    size (4 - kids, small, medium, large)
+
+    2*2*4 = 16 combinations
+
+
+- Example: Sliders meal. What combinations?
+
+    cheese - 2 (T/F)
+    side - 3 (kid sized fries, kid sized beans, kid sized corn)
+    drink - 3
+
+    2*3*3 = 18 sliders meals
+
+
+
+Display for each item:
+    - Name
+    - Preparation Information
+    - Price
+    - Calories
+
+
+user should be able to click to go to Entrees, Drinks, Sides, KidsMeals
+
+
+--> feel free to style however you want! Feel free to look online for CSS examples
+
+
+--> if you don't like the look of all the menu combinations
+- next week we'll be adding search/filters to our menu
+- it will be easier if you have a menu with all those combinations
+... BUT next week you are welcome to change how things are displayed on the page
+
+
+////////////////////////
+
+Menu class: FullMenu, Entree, Sides, Drinks, KidsMeals
+
+
+(some List).AddRange(some IEnumerable);
+
+
+When you add the ASP.NET web app project, be sure to right-click the 
+    build your bowl solution and do Add->New project
+
+////////////////////////
+
+
+On Wednesday:
+- discuss testing and UML for milestone
