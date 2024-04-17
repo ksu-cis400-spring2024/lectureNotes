@@ -1,0 +1,85 @@
+Milestone 10: due Friday
+    (use .NET 7.0 in Website project)
+
+
+Recommended order of approach:
+- Add About page and edit Privacy page
+- Write the static Menu class
+- Write the index page to get the menu information to *appear*
+- Testing
+- UML
+- Styling
+
+//////////////////////////////////
+
+
+Testing: static Menu class
+
+- For each type of menu item (Entrees, Sides, Drinks, KidsMeals):
+    --> test that the count matches your expectations
+        (leave the expected value as an expression)
+
+        expected value: 2*4 + 
+
+    --> test that the collection contains all expected menu
+        items
+
+
+
+Assert.Contains(collection, item => (some bool expression about item));
+
+
+Example: see if "Sides" contains a kid-sized curly fries
+
+Assert.Contains(Menu.Sides, item => item is Fries f && f.Curly && f.SideSize == Size.Kids);
+
+
+--> be careful when checking for build-your-own bowls and nachos
+
+//this will be true for ANY kind of bowl, even specialty bowls
+//need to also check that it is NOT each of the specialty types
+Assert.Contains(Menu.Entrees, item => item is Bowl);
+
+
+
+///////////////////////////////
+
+Loop through enumerations: 
+
+foreach (Size size in Enum.GetValues(typeof(Size)))
+
+
+Kids meals:
+    create a List of Sides
+    create a List of Drinks
+
+    Assert.Contains(Menu.KidsMeals, item => ... k.SideChoice.Equals(s));
+
+would need to override Equals for the sides and drinks
+
+//////////////////////////////
+
+UML:
+
+- add static Menu class (show it is in BuildYourBowl.Data)
+    how to show static? (underline)
+    any "has-a" relationships? aggregation of IMenuItem
+        has an aggregation of IngredientItem
+
+- add each page (Index, Privacy, About, Error) and mark the new namespace
+    - look in each PageModel to see any properties/members
+    - look for inheritance information
+    - what does the Index page *have*?
+        aggregation of IMenuItem
+        aggregation of IngredientItem
+
+--> relationship between Menu and Index page?
+    directed association
+    arrow points from Index to Menu
+
+
+--> don't need Program.cs, _Layout.cshtml, ViewImports.cshtml
+
+
+
+
