@@ -25,5 +25,12 @@ namespace TestExample
 
             Assert.Equal(expectedPeopleYears, d.PeopleYears);
         }
+
+        [Fact]
+        public void CheckDogEqual()
+        {
+            List<Dog> dogs = new() { new Dog() { Age = 10, Legs = 3, Name = "Fido" }, new Dog() { Age = 5, Legs = 2, Name = "Rover" }};
+            Assert.Contains(new Dog() { Age = 10, Legs = 3, Name = "Fido" }, dogs);
+        }
     }
 }

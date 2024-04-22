@@ -17,9 +17,10 @@ Use a form to transfer data from browser to PageModel
 Forms have different input elements, notably:
     text
     number
-    radio button (also have ischecked attribute)
-    check box (also have ischecked attribute)
+    radio button 
+    check box 
     submit (a button that submits the form)
+
 
 <form>
     <input type="text" name="VarName" value="SomeValue"/>
@@ -30,3 +31,60 @@ Forms have different input elements, notably:
 
 Clicking the submit button calls the OnGet method in the PageModel
 
+
+
+
+    also placeholder, min / max (for number type) attributes
+
+
+/////////////////////////////
+
+Data binding in Razor pages
+
+- bind an HTML form element to a property in the PageModel
+
+<input type="text" name = "MyString" value="@Model.MyString"/>
+
+
+
+In PageModel:
+
+[BindProperty(SupportsGet = true)]
+public string MyString { get; set; }
+
+
+//////////////////////////////
+
+Example: see initial form Example
+
+--> how to bind to a string property?
+
+--> what should we do in OnGet? When is OnGet first called?
+
+--> what happens if we try to add each element to a list?
+    what happens to the list?
+
+
+//////////////////////////////
+
+Milestone 11:
+
+- add filters by calories, price, keyword
+- how to display the filtered results?
+
+
+For keyword: split into separate strings
+
+You have a match of all the strings are contained in either:
+    - name
+    - ingredients (for entrees)
+    - preparation information
+
+
+///////////////////////////
+
+Wednesday: discuss LINQ queries, testing, UML updates
+
+
+
+///////////////

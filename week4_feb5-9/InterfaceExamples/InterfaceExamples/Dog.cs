@@ -39,5 +39,14 @@ namespace InterfaceExamples
                 else return 24 + 5 * (Age - 2);
             }
         }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is Dog d)
+            {
+                if (d.Age == Age && d.Name == Name && d.Legs == Legs) return true;
+            }
+            return false;
+        }
     }
 }
