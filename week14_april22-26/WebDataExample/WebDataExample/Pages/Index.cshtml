@@ -5,6 +5,11 @@
 }
 
 <form>
-    
+    <input type="text" name="UserInput" value="@Model.UserInput"/>
     <input type="submit" value="Submit Form" />
 </form>
+
+@foreach(string s in Model.AllWords)
+{
+    <p>@s</p>
+}

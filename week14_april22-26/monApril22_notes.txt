@@ -7,6 +7,8 @@ Next week: POST requests, cloud workspaces (Gitpod.io)
     one more milestone (#12)
 
 We do have a final exam.
+    1:30 section: Monday, May 6 11:50 am - 1:40 pm
+    2:30 section: Wednesday, May 8 4:10-6:00 pm
 
 ///////////////////////////
 
@@ -23,7 +25,7 @@ Forms have different input elements, notably:
 
 
 <form>
-    <input type="text" name="VarName" value="SomeValue"/>
+    <input type="text" name="VarName" value="I have text"/>
     ...
     <input type="submit" value="Submit Form"/>
 </form>
@@ -69,16 +71,33 @@ Example: see initial form Example
 
 Milestone 11:
 
-- add filters by calories, price, keyword
-- how to display the filtered results?
+- add filters by calories (low/high), price (low/high), keyword
 
+    kids curly
+
+    (should display kids-sized curly fries)
 
 For keyword: split into separate strings
 
 You have a match of all the strings are contained in either:
     - name
-    - ingredients (for entrees)
+    - included ingredients (for entrees)
     - preparation information
+
+
+How to display filtered results?
+
+
+Menu
+
+have several filter methods
+
+return: IEnumerable<IMenuItem>
+
+parameters: IEnumerable<IMenuItem>, filter criteria
+
+
+might want a way to take a collection of items and returns just the entrees
 
 
 ///////////////////////////
