@@ -1,0 +1,70 @@
+Milestone 11: due Friday
+
+Next week: POST requests, cloud workspaces (Gitpod.io)
+    one more milestone (#12)
+
+We do have a final exam.
+    1:30 section: Monday, May 6 11:50 am - 1:40 pm
+    2:30 section: Wednesday, May 8 4:10-6:00 pm
+
+
+////////////////////////
+
+//suppose items is an IEnumerable<SomeType>
+
+
+IEnumerable<SomeType> keep = items.Where(item => (some condition about item));
+
+
+Or could write:
+IEnumerable<SomeType> keep = from item in items 
+                        where (some condition about item)
+                        select item;
+
+
+
+//////////////////////
+
+Example: write method that takes an IEnumerable<Person> (each Person has Name, Age),
+minAge, maxAge, firstLetter
+
+Return collection of people whose name begins with that letter and age is in
+the specified range
+
+
+////////////////////
+
+Example (suppose Employee, Student both extend Person)
+
+write method that takes an IEnumerable<Person> 
+
+Return collection of people who are students
+
+
+////////////////////
+
+Example: how to revise above method to put in alphabetical order by name?
+
+
+////////////////////
+
+Why LINQ instead of manual?
+
+
+
+////////////////////
+
+Milestone 11 testing.
+
+- price filter:
+
+
+- cals filter:
+
+
+- keyword filter:
+
+
+///////////////////
+
+Milestone 11 UML:
