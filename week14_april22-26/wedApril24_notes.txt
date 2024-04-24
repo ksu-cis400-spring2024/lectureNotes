@@ -43,9 +43,18 @@ minAge, maxAge, firstLetter
 Return collection of people whose name begins with that letter and age is in
 the specified range
 
+public IEnumerable<Person> Filter(IEnumerable<Person> allPeople, uint minAge,
+                                uint maxAge, char firstLetter)
+{
+    return allPeople.Where(p => p.Age >= minAge && p.Age <= maxAge && 
+                    p.Name[0] == firstLetter);
+
+}
 
 
-
+from p in allPeople
+where p => p.Age >= minAge && p.Age <= maxAge && p.Name[0] == firstLetter
+select p;
 
 
 ////////////////////
@@ -58,6 +67,10 @@ Return collection of people who are students
 
 
 
+public IEnumerable<Person> Filter(IEnumerable<Person> allPeople) {
+
+    return allPeople.Where(p => p is Student);
+}
 
 
 
@@ -66,6 +79,10 @@ Return collection of people who are students
 Example: how to revise above method to put in alphabetical order by name?
 
 
+public IEnumerable<Person> Filter(IEnumerable<Person> allPeople) {
+
+    return allPeople.Where(p => p is Student).OrderBy(p => p.Name);
+}
 
 
 
@@ -74,7 +91,7 @@ Example: how to revise above method to put in alphabetical order by name?
 
 Why LINQ instead of manual?
 
-
+will combine into one, is more efficient
 
 
 
@@ -83,18 +100,41 @@ Why LINQ instead of manual?
 
 Milestone 11 testing.
 
-- price filter:
+- price filter (min/max price):
+    test correct if both null -> shouldn't filter anything
+    test correct if just one null 
+    test correct if given both min/max: 
+        make sure each item in the result's price is in the correct range
+        make sure each item in menu whose price is in that range is in the result
+
+
+- cals filter (min/max cals):
+    test correct if both null -> shouldn't filter anything
+    test correct if just one null 
+    test correct if given both min/max: 
+        make sure each item in the result's cals is in the correct range
+        make sure each item in menu whose cals is in that range is in the result
 
 
 
-- cals filter:
+- keyword filter (big string that is all the keywords):
+    test correct if null or empty -> shouldn't filter anything
 
+    test actual keywords
+        Option 1) Try searching the whole menu
+        Option 2) Create your own smaller menu
 
-
-- keyword filter:
+            keywords to test: one word, multiple keywords,
+                "small beans xyz" - make sure no results
+                "small beans" - make sure no other small menu items
+                test with all uppercase
+                test with mixed case
 
 
 
 ///////////////////
 
 Milestone 11 UML:
+
+    Index
+    Static Menu
