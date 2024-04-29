@@ -1,6 +1,6 @@
 General announcements:
 - NO late work accepted after Friday, May 3 (includes milestones and tutorials)
-- Milestone 11 must be checked off in class or office hours (not Canvas)
+- Milestone 12 must be checked off in class or office hours (not Canvas)
 - Website design competition - submit new release by Friday, 
     winner gets Chipotle or Qdoba gift card
 
@@ -23,7 +23,7 @@ Tutorial 2: Cloud workspaces (due Tuesday)
     - (while running, will be publicly available)
 
 
-Milestone 11 (due Friday, May 3)
+Milestone 12 (due Friday, May 3)
     - Add a reviews link to your website
     - Should load previous reviews (sorted with newest on top)
     - User can add new reviews
@@ -46,7 +46,7 @@ For reviews:
 
 
 
---> see milestone 11 demo
+--> see milestone 12 demo
 
 
 ///////////////////
@@ -75,18 +75,59 @@ For open-ended:
 - Using inheritance and abstract classes
     --> rules when extending a class? constructors?
 
+        public class Two : One {
+            //if One has anything abstract, I have to
+            //provide implementation details (use "override")
+
+            //OR, could inherit as abstract but would need to declare
+            //Two as abstract
+        }
+
     --> rules when extending an abstract class?
+
+    public class Two : One {
+        public Two(int d) : base(d) {
+
+        }
+    }
+
+    public class One {
+        private int _num;
+
+        public One(int n) {
+            _num = n;
+        }
+    }
 
 
 - Enforcing the bounds of a property
+
+    private backing field
+
+
 
 - Creating and using objects
 
 - Drawing and interpreting UML diagrams
     --> kinds of associations?
 
+        realization (interfaces): dashed line open arrow pointing at interface
+        generalization (inheritance): solid line open arrow pointint at base class
+        composition/aggregation (collections): diamond touches the collection
+            include multiplicities
+
+    private (-) public (+) protected (#)
+    static - underline
+    abstract - italicize
+
+
+
 
 - Determining if an object has a particular type and using casting operations
+
+    if (Object is SomeType t)
+
+
 
 - Writing Fact and Theory xUnit tests
 
@@ -108,14 +149,52 @@ LINQ queries for filtering
 General review:
 
 
-Encapsulation --> example? 
+Encapsulation --> example? collecting together related pieces of information
+    and functionality into a class with fields/properties/methods
 
 Polymorphism --> example? 
+    many types
 
-Inheritance --> example? why?
+    Horchata object
+        Horchata, Drink, IMenuItem, object, INotifyPropertyChanged
+
+
+Inheritance --> example? why? prevent code duplication
+    Entree class - storing ingredients, calculating calories
+        each specific entree overrides price to do it differently
+
+        Dog extends Animal, Collie extends Dog
+
+        Collie c = new();
+        Dog d = new();
+        Animal a = new();
+
+        Collie c2 = a; //NO!!! Animals aren't necessarily collections
+
+        d = c;          //YES!!! All collies are dogs
+
+
+
     different names for each class?
 
+        parent / super / base
+        child / sub / derived
+
+
+
     how to implement methods/properties differently?
+
+    public class Animal {
+        public virtual void Talk() { Console.WriteLine("words");}
+    }
+
+    public class Dog : Animal {
+        public override void Talk() { Console.WriteLine("woof"); }
+    }
+
+    Animal d = new Dog();
+    d.Talk();
+
 
     how do constructors work?
 
@@ -123,7 +202,13 @@ Inheritance --> example? why?
 
 Interfaces - why?
 
+    impose requirements on classes that implement it
+
+
 Abstract classes --> how different from interfaces?
+    an abstract class can have completed (non-abstract) methods/properties
+    an abstract class CAN have all methods/properties complete, would just
+        mean I can't instantiate it
 
 
     --> extending an abstract class
@@ -136,14 +221,38 @@ MVVM
 Field
 Method
 Property --> difference from field? types of accessors? 
+    more control over accessibility
+    derived properties
+
+    accessors: get, set, init (only use init when creating object)
+    can initialize ANY property in constructor, even with no set/init
 
 public
-protected --> where visible?
+protected --> where visible? class itself, all of its descendents
 private
 static --> how do we use?
 
+    ClassName.MethodName(...)
+
+    if I have a class with a static method/poperty, it does NOT have to be static
+    if a class is static, then everything in it is static and I can't create
+        an object of it
+
+    static constructor: called automatically the first time you use that
+        static clsas
+
 
 Implicit casting --> when?
+
+    int x = 10;
+    double d = x; //always OK
+
+    Horchata h = new();
+    Drink d = h;            //YES!
+
+    d.Ice = true; //NO! Drink doesn't have Ice
+
+    (d as Horchata).Ice = true;
 
 Examples:
 
@@ -153,6 +262,9 @@ Examples:
 
 
 Explicit casting --> different ways. When is it needed? Example?
+
+    (TypeName)
+    as
 
 
 virtual --> places used? behavior?
@@ -166,10 +278,10 @@ override --> when can we say this?
 
 
 
-as - what kind of thing is this?
+as - what kind of thing is this? type casting
 
 
-is - what kind of thing is this?
+is - what kind of thing is this? type checking
 
 
 
@@ -215,23 +327,18 @@ Look at UML of student information.
 
 --> Honor roll = 3.5 and up
 
+public IEnumerable<Student> HonorRoll {
+    get {
+        return _students.Where(student => student.GPA >= 3.5);
+
+    }
+
+}
+
+
+
+
 --> search by name: see if seach string in first OR last name
 
 
 --> how to write method that gets all freshmen on the honor roll?
-
-/////////////////
-
---> if more time, see pie UML
-
-
-Add the appropriate UML associations to the diagram. 
-We want to indicate that PaleozoicPie implements 
-INotifyPropertyChanged and IOrderItem.
-
-
-Write the PaleozoicPie class definition.
-- Description should be the filling followed by “Paleozoic Pie.” 
-- A Paleozoic Pie is $3.00 plus an additional $1 when served with ice cream (a la mode)
-- Instructions should include “Hot” if the pie is hot and 
-    “A La Mode” if the pie is served a la mode.
