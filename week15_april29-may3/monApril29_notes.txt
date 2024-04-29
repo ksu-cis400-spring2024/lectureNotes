@@ -1,0 +1,208 @@
+General announcements:
+- NO late work accepted after Friday, May 3 (includes milestones and tutorials)
+- Milestone 11 must be checked off in class or office hours (not Canvas)
+- Website design competition - submit new release by Friday, 
+    winner gets Chipotle or Qdoba gift card
+
+
+Tutorial 1: POST requests and JSON (due today)
+    - use POST requests for more security, to send more info, 
+        when changing underlying data
+    - can use JSON to simulate an external database
+    - deserialize from JSON into objects when your application starts
+    - serialize objects to JSON when a change is made
+    - (in practice, you would use an external database for a web application)
+
+Tutorial 2: Cloud workspaces (due Tuesday)
+    - create Gitpod.io account
+        (really useful for group projects and to be able to work from 
+        multiple locations)
+    - link to movie databases repo
+    - with a few changes in settings, can launch app from Gitpod
+    - (while running, will be publicly available)
+
+
+Milestone 11 (due Friday, May 3)
+    - Add a reviews link to your website
+    - Should load previous reviews (sorted with newest on top)
+    - User can add new reviews
+    - All reviews are stored in JSON
+    - Host build your bowl repo on Gitpod.io
+    - To "submit": demo in class or office hours
+        - show launching your web app from Gitpod
+        - show adding a couple of reviews (with newest on top)
+        - show closing web app, launching again - reviews should still be there
+
+For reviews:
+- Create a data class for each review (string Text, DateTime PlacedAt)
+- Create static ReviewDatabase class to load/add reviews
+- Deserialize JSON to a List of those reviews
+- When displaying reviews, will want to use OrderByDescending on the PlacedAt
+    property
+
+--> you can have a Reviews property in your PageModel that gets the result
+    of a LINQ query that orders the ReviewDatabase reviews by PlacedAt
+
+
+
+--> see milestone 11 demo
+
+
+///////////////////
+
+Final exam.
+    1:30 section - Monday, May 6 11:50 am - 1:40 pm (usual lab room)
+    2:30 section - Wednesday, May 8 4:10-6:00 pm (usual lab room)
+
+Format.
+    Paper-based, closed notes, closed computers.
+    Multiple choice followed by open-ended.
+    Similar format as midterms
+
+--> be familiar with all vocabulary terms
+
+For open-ended:
+- Implementing a class, including fields/properties/methods/constructors
+- Writing and implementing an interface
+- Using inheritance and abstract classes
+    --> rules when extending a class? constructors?
+    --> rules when extending an abstract class?
+
+- Enforcing the range of a property
+- Creating and using objects
+- Drawing and interpreting UML diagrams
+    --> kinds of associations?
+
+
+- Determining if an object has a particular type and using casting operations
+- Writing Fact and Theory xUnit tests
+- Implementing and testing INotifyPropertyChanged
+- Events, including custom events, custom event arguments, invoking events, 
+    attaching event handlers to events, and using events to send messages 
+    between objects
+LINQ queries for filtering
+
+
+--> No questions on XAML, Razor Pages, CSS, HTML
+
+
+Encapsulation --> example? 
+State
+Class
+Object
+Polymorphism --> example? 
+
+Type
+Type checking
+Casting
+
+Inheritance --> example? why?
+    different names for each class?
+
+    how to implement methods/properties differently?
+
+    how do constructors work?
+
+
+
+Interfaces - why?
+Abstract classes --> how different from interfaces?
+
+
+
+    --> extending an abstract class
+
+
+Events
+Data binding
+MVVM
+
+Field
+Method
+Property --> difference from field?.
+
+public
+protected --> where visible?
+private
+static --> how do we use?
+
+Implicit casting --> when?
+
+    int x = 10;
+    double d = x; //is this OK? is this casting?
+
+    int y = d; //is this OK?
+
+    Horchata h = new Horchata();
+    IMenuItem item = h; //is this OK? what type of casting?
+
+    Horchata another = item; //is this OK?
+
+Explicit casting --> different ways. When is it needed? Example?
+
+
+virtual --> places used? behavior?
+
+
+
+abstract --> places used? behavior?
+
+override --> when can we say this?
+
+as - what kind of thing is this?
+
+
+is - what kind of thing is this?
+
+
+
+enum --> know how to declare, use
+
+
+
+public interface IInterface {
+    void Method1(params);
+}
+
+public abstract class AbstractClass {
+    public void FinishedMethod() {
+        Console.WriteLine("is done");
+    }
+
+    public abstract void AbstractMethod(params);
+}
+
+public class ChildClass : AbstractClass, IInterface {
+    public override void AbstractMethod(params) {
+        Console.WriteLine("code");
+    }
+
+    public void Method1(params) {
+        Console.WriteLine("done");
+    }
+}
+
+
+
+
+ChildClass c = new ChildClass();
+c.FinishedMethod(); //is ok
+
+//////////////////
+
+Look at UML of student information.
+
+--> assume _students is already initialized
+
+--> complete StudentRegistry members using LINQ
+
+--> Honor roll = 3.5 and up
+
+--> search by name: see if seach string in first OR last name
+
+
+--> how to write method that gets all freshmen on the honor roll?
+
+/////////////////
+
+--> if more time, do UML and property changed practice
